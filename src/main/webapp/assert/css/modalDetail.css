@@ -1,0 +1,94 @@
+.control{
+    position:relative;
+}
+div.zp{
+    position: absolute;
+    top: -1px;
+    left: -30px;
+    width: 270px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    background: rgb(85,123,212);
+}
+div.zp span ,span.confidence,.modal-make-content span{
+    color: #22f943;
+    font-weight: bold;
+}
+h2{
+    border-bottom:1px solid #ddd;
+}
+h2 button{
+    height: 24px;
+    border-radius: 5px;
+    margin: 3px 5px;
+    float: right;
+    padding: 6px 6px;
+    outline: none;
+    border: 0;
+    background: #fcfcfc;
+    color: #000;
+    font: normal normal normal 14px/1 FontAwesome;
+}
+h2 button:hover ,h2 button.on{
+    background: #33cc33;
+    color:#fff;
+}
+.wave {
+    height: 150px;
+}
+.stts li {
+    margin: 32px 0px;
+    display: inline-block;
+}
+.msg-box{
+    overflow: hidden;
+}
+.transfer_box{
+    border-right:1px solid #ddd;
+}
+
+.form-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    table-layout: fixed;
+}
+
+.form-table th {
+    border-left: none;
+    border-top: none;
+    border-right: 1px #ccc solid;
+    border-bottom: 1px #ccc solid;
+    background:rgba(243,243,243,.7);
+    box-sizing: border-box;
+}
+
+.form-table td {
+    border-left: none;
+    border-top: none;
+    border-bottom: 1px rgba(176, 143, 143, 0.3) solid;
+    border-right: 1px rgba(171, 143, 143, 0.36) solid;
+    border-right: 1px rgba(171, 143, 143, 0.36) solid;
+    box-sizing: border-box;
+}
+.form-table tbody tr:nth-child(odd) td {
+    background-color: rgba(19, 21, 1, 0.07);
+}
+.confidence{
+    margin-left:10px;
+}
+.timeBox{
+    border-bottom:2px solid rgb(85,123,212);
+}
+tbody tr:hover,tbody tr.on{
+    background-color: rgba(22, 24, 5, 0.4);
+    color:#fff !important;
+}
+.del-question{
+    text-align: center;
+}
+table thead tr{
+    color: #333;
+    font-weight: bold
+}

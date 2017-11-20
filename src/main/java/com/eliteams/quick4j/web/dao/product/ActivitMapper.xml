@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.eliteams.quick4j.web.dao.product.ActivitMapper" >
+  <resultMap id="BaseResultMap" type="com.eliteams.quick4j.web.model.product.Activit" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="activitystarttime" property="activitystarttime" jdbcType="TIMESTAMP" />
+    <result column="activityimg" property="activityimg" jdbcType="VARCHAR" />
+    <result column="videourl" property="videourl" jdbcType="VARCHAR" />
+    <result column="isactivity" property="isactivity" jdbcType="INTEGER" />
+    <result column="proid" property="proid" jdbcType="VARCHAR" />
+    <result column="activityendtime" property="activityendtime" jdbcType="TIMESTAMP" />
+    <result column="coverpic" property="coverpic" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.eliteams.quick4j.web.model.product.ActivitWithBLOBs" extends="BaseResultMap" >
+    <result column="activitytxt" property="activitytxt" jdbcType="LONGVARCHAR" />
+    <result column="videotxt" property="videotxt" jdbcType="LONGVARCHAR" />
+    <result column="covertxt" property="covertxt" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, name, activitystarttime, activityimg, videourl, isactivity, proid, activityendtime, 
+    coverpic
+  </sql>
+  <sql id="Blob_Column_List" >
+    activitytxt, videotxt, covertxt
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.eliteams.quick4j.web.model.product.ActivitExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from activit
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.eliteams.quick4j.web.model.product.ActivitExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from activit
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from activit
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByExampleWithBLOBsByMessage" resultType="map" parameterType="map">
+    SELECT
+    act.id AS actId,
+    act.`name` AS actName,
+    act.activitystarttime AS aStartTime,
+    act.activityendtime AS aEndTime,
+    act.activitytxt AS aTxt,
+    act.activityimg AS aImg,
+    act.videourl AS videlUrl,
+    act.videotxt AS videotTxt,
+    pro.*
+    FROM activit act
+    LEFT JOIN product pro ON act.proid = pro.id
+    WHERE act.id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from activit
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.eliteams.quick4j.web.model.product.ActivitExample" >
+    delete from activit
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.eliteams.quick4j.web.model.product.ActivitWithBLOBs" >
+    insert into activit (id, name, activitystarttime, 
+      activityimg, videourl, isactivity, 
+      proid, activityendtime, coverpic, 
+      activitytxt, videotxt, covertxt
+      )
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{activitystarttime,jdbcType=TIMESTAMP}, 
+      #{activityimg,jdbcType=VARCHAR}, #{videourl,jdbcType=VARCHAR}, #{isactivity,jdbcType=INTEGER}, 
+      #{proid,jdbcType=VARCHAR}, #{activityendtime,jdbcType=TIMESTAMP}, #{coverpic,jdbcType=VARCHAR}, 
+      #{activitytxt,jdbcType=LONGVARCHAR}, #{videotxt,jdbcType=LONGVARCHAR}, #{covertxt,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.eliteams.quick4j.web.model.product.ActivitWithBLOBs" >
+    insert into activit
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="activitystarttime != null" >
+        activitystarttime,
+      </if>
+      <if test="activityimg != null" >
+        activityimg,
+      </if>
+      <if test="videourl != null" >
+        videourl,
+      </if>
+      <if test="isactivity != null" >
+        isactivity,
+      </if>
+      <if test="proid != null" >
+        proid,
+      </if>
+      <if test="activityendtime != null" >
+        activityendtime,
+      </if>
+      <if test="coverpic != null" >
+        coverpic,
+      </if>
+      <if test="activitytxt != null" >
+        activitytxt,
+      </if>
+      <if test="videotxt != null" >
+        videotxt,
+      </if>
+      <if test="covertxt != null" >
+        covertxt,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="activitystarttime != null" >
+        #{activitystarttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="activityimg != null" >
+        #{activityimg,jdbcType=VARCHAR},
+      </if>
+      <if test="videourl != null" >
+        #{videourl,jdbcType=VARCHAR},
+      </if>
+      <if test="isactivity != null" >
+        #{isactivity,jdbcType=INTEGER},
+      </if>
+      <if test="proid != null" >
+        #{proid,jdbcType=VARCHAR},
+      </if>
+      <if test="activityendtime != null" >
+        #{activityendtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="coverpic != null" >
+        #{coverpic,jdbcType=VARCHAR},
+      </if>
+      <if test="activitytxt != null" >
+        #{activitytxt,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="videotxt != null" >
+        #{videotxt,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="covertxt != null" >
+        #{covertxt,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.eliteams.quick4j.web.model.product.ActivitExample" resultType="java.lang.Integer" >
+    select count(*) from activit
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update activit
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.activitystarttime != null" >
+        activitystarttime = #{record.activitystarttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.activityimg != null" >
+        activityimg = #{record.activityimg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.videourl != null" >
+        videourl = #{record.videourl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isactivity != null" >
+        isactivity = #{record.isactivity,jdbcType=INTEGER},
+      </if>
+      <if test="record.proid != null" >
+        proid = #{record.proid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.activityendtime != null" >
+        activityendtime = #{record.activityendtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.coverpic != null" >
+        coverpic = #{record.coverpic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.activitytxt != null" >
+        activitytxt = #{record.activitytxt,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.videotxt != null" >
+        videotxt = #{record.videotxt,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.covertxt != null" >
+        covertxt = #{record.covertxt,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update activit
+    set id = #{record.id,jdbcType=VARCHAR},
+      name = #{record.name,jdbcType=VARCHAR},
+      activitystarttime = #{record.activitystarttime,jdbcType=TIMESTAMP},
+      activityimg = #{record.activityimg,jdbcType=VARCHAR},
+      videourl = #{record.videourl,jdbcType=VARCHAR},
+      isactivity = #{record.isactivity,jdbcType=INTEGER},
+      proid = #{record.proid,jdbcType=VARCHAR},
+      activityendtime = #{record.activityendtime,jdbcType=TIMESTAMP},
+      coverpic = #{record.coverpic,jdbcType=VARCHAR},
+      activitytxt = #{record.activitytxt,jdbcType=LONGVARCHAR},
+      videotxt = #{record.videotxt,jdbcType=LONGVARCHAR},
+      covertxt = #{record.covertxt,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update activit
+    set id = #{record.id,jdbcType=VARCHAR},
+      name = #{record.name,jdbcType=VARCHAR},
+      activitystarttime = #{record.activitystarttime,jdbcType=TIMESTAMP},
+      activityimg = #{record.activityimg,jdbcType=VARCHAR},
+      videourl = #{record.videourl,jdbcType=VARCHAR},
+      isactivity = #{record.isactivity,jdbcType=INTEGER},
+      proid = #{record.proid,jdbcType=VARCHAR},
+      activityendtime = #{record.activityendtime,jdbcType=TIMESTAMP},
+      coverpic = #{record.coverpic,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.eliteams.quick4j.web.model.product.ActivitWithBLOBs" >
+    update activit
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="activitystarttime != null" >
+        activitystarttime = #{activitystarttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="activityimg != null" >
+        activityimg = #{activityimg,jdbcType=VARCHAR},
+      </if>
+      <if test="videourl != null" >
+        videourl = #{videourl,jdbcType=VARCHAR},
+      </if>
+      <if test="isactivity != null" >
+        isactivity = #{isactivity,jdbcType=INTEGER},
+      </if>
+      <if test="proid != null" >
+        proid = #{proid,jdbcType=VARCHAR},
+      </if>
+      <if test="activityendtime != null" >
+        activityendtime = #{activityendtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="coverpic != null" >
+        coverpic = #{coverpic,jdbcType=VARCHAR},
+      </if>
+      <if test="activitytxt != null" >
+        activitytxt = #{activitytxt,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="videotxt != null" >
+        videotxt = #{videotxt,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="covertxt != null" >
+        covertxt = #{covertxt,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.eliteams.quick4j.web.model.product.ActivitWithBLOBs" >
+    update activit
+    set name = #{name,jdbcType=VARCHAR},
+      activitystarttime = #{activitystarttime,jdbcType=TIMESTAMP},
+      activityimg = #{activityimg,jdbcType=VARCHAR},
+      videourl = #{videourl,jdbcType=VARCHAR},
+      isactivity = #{isactivity,jdbcType=INTEGER},
+      proid = #{proid,jdbcType=VARCHAR},
+      activityendtime = #{activityendtime,jdbcType=TIMESTAMP},
+      coverpic = #{coverpic,jdbcType=VARCHAR},
+      activitytxt = #{activitytxt,jdbcType=LONGVARCHAR},
+      videotxt = #{videotxt,jdbcType=LONGVARCHAR},
+      covertxt = #{covertxt,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.eliteams.quick4j.web.model.product.Activit" >
+    update activit
+    set name = #{name,jdbcType=VARCHAR},
+      activitystarttime = #{activitystarttime,jdbcType=TIMESTAMP},
+      activityimg = #{activityimg,jdbcType=VARCHAR},
+      videourl = #{videourl,jdbcType=VARCHAR},
+      isactivity = #{isactivity,jdbcType=INTEGER},
+      proid = #{proid,jdbcType=VARCHAR},
+      activityendtime = #{activityendtime,jdbcType=TIMESTAMP},
+      coverpic = #{coverpic,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,26 @@
+.form-group>label{
+    width:150px;
+    text-align: right;
+}
+.form-group label.select-position{
+    float:left;
+}
+.form-group label.subOption{
+    width:50px;
+}
+.form-group section{
+    float:left;
+}
+.form-group .time,.form-group .time div,.form-group .time label{
+    float:left;
+}
+.modalInput{
+    width:150px;
+    margin-right:5px;
+}
+.modal-footer{
+    text-align: center;
+}
+.query-list .query button{
+    font: normal normal normal 14px/1 FontAwesome;
+}

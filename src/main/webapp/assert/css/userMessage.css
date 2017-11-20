@@ -1,0 +1,64 @@
+body{
+    padding:0;
+    margin:0;
+    background: #5e5d5d;
+}
+.user_message{
+    width: 500px;
+    height: 360px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -180px 0 0 -250px;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#185fcd), to(#f6f6f8));
+    z-index: 999;
+    color:#fff;
+}
+.user_header{
+    position: absolute;
+    top: -87px;
+    left: 131px;
+    font-size: 40px;
+}
+.user_body{
+    margin-top:30px;
+}
+#userName{
+    font-size:28px;
+}
+.group{
+    height:60px;
+    line-height:60px;
+}
+.group .label{
+    display:inline-block;
+    width:195px;
+    text-align: right;
+    font-size:18px;
+}
+.group input{
+    padding:3px 5px;
+    border-radius:5px;
+}
+.user_footer{
+    text-align: center;
+}
+.user_footer button{
+    padding:4px 6px;
+    border-radius:5px;
+    outline:none;
+    background: -webkit-gradient(linear,0 0, 0 100%, from(#5abef6), to(#f6f6f8));
+    border:1px solid #fff;
+    margin: 20px 15px;
+    cursor: pointer;
+}
+.user_footer button:hover{
+    background: -webkit-gradient(linear,0 0, 0 100%, from(#f6f6f8), to(#5abef6));
+}
+.jqx-validator-error-label{
+    left:222px !important;
+    top:-7px !important;
+    font-weight:bold;
+    width:180px !important;
+}

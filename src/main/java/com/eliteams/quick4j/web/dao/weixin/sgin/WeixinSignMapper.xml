@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.eliteams.quick4j.web.dao.weixin.sgin.WeixinSignMapper" >
+  <resultMap id="BaseResultMap" type="com.eliteams.quick4j.web.model.weixin.sgin.WeixinSign" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="open_id" property="openId" jdbcType="VARCHAR" />
+    <result column="sign_time" property="signTime" jdbcType="TIMESTAMP" />
+    <result column="sign_points" property="signPoints" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, open_id, sign_time, sign_points
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.eliteams.quick4j.web.model.weixin.sgin.WeixinSignExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from weixin_sign
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from weixin_sign
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from weixin_sign
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.eliteams.quick4j.web.model.weixin.sgin.WeixinSignExample" >
+    delete from weixin_sign
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.eliteams.quick4j.web.model.weixin.sgin.WeixinSign" >
+    insert into weixin_sign (id, open_id, sign_time, 
+      sign_points)
+    values (#{id,jdbcType=VARCHAR}, #{openId,jdbcType=VARCHAR}, #{signTime,jdbcType=TIMESTAMP}, 
+      #{signPoints,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.eliteams.quick4j.web.model.weixin.sgin.WeixinSign" >
+    insert into weixin_sign
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="openId != null" >
+        open_id,
+      </if>
+      <if test="signTime != null" >
+        sign_time,
+      </if>
+      <if test="signPoints != null" >
+        sign_points,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="openId != null" >
+        #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="signTime != null" >
+        #{signTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="signPoints != null" >
+        #{signPoints,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.eliteams.quick4j.web.model.weixin.sgin.WeixinSignExample" resultType="java.lang.Integer" >
+    select count(*) from weixin_sign
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update weixin_sign
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.openId != null" >
+        open_id = #{record.openId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.signTime != null" >
+        sign_time = #{record.signTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.signPoints != null" >
+        sign_points = #{record.signPoints,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update weixin_sign
+    set id = #{record.id,jdbcType=VARCHAR},
+      open_id = #{record.openId,jdbcType=VARCHAR},
+      sign_time = #{record.signTime,jdbcType=TIMESTAMP},
+      sign_points = #{record.signPoints,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.eliteams.quick4j.web.model.weixin.sgin.WeixinSign" >
+    update weixin_sign
+    <set >
+      <if test="openId != null" >
+        open_id = #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="signTime != null" >
+        sign_time = #{signTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="signPoints != null" >
+        sign_points = #{signPoints,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.eliteams.quick4j.web.model.weixin.sgin.WeixinSign" >
+    update weixin_sign
+    set open_id = #{openId,jdbcType=VARCHAR},
+      sign_time = #{signTime,jdbcType=TIMESTAMP},
+      sign_points = #{signPoints,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+
+  <select id="isTodaySigned" parameterType="map" resultType="java.lang.Integer">
+    SELECT
+      count(*) AS signCount
+    FROM weixin_sign
+    WHERE open_id = #{record.openId,jdbcType=VARCHAR}
+    AND DATE_FORMAT(sign_time,'%Y-%m-%d') = DATE_FORMAT(now(),'%Y-%m-%d')
+  </select>
+
+  <select id="isMondeySigned" parameterType="map" resultType="java.lang.Integer">
+    SELECT
+      count(*) signCount
+    FROM weixin_sign
+    WHERE open_id = #{openId,jdbcType=VARCHAR}
+    AND sign_time between str_to_date(#{mondey, jdbcType=VARCHAR}, '%Y-%m-%d %H:%i:%s') and now()
+  </select>
+</mapper>

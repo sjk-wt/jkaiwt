@@ -1,0 +1,186 @@
+ul.header-title {
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-bottom: 0;
+    background: rgb(85, 123, 212);
+}
+
+ul.header-title li {
+    float: left;
+    width: 100px;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+}
+
+ul.header-title li:hover, ul.header-title li.hover {
+    background: #fff;
+    box-shadow: inset 0px 0px 8px #3385ff;
+}
+
+.table thead tr td {
+    border: 1px solid #ddd !important;
+}
+
+.table thead tr b {
+    background: #555;
+    color: #fff;
+    padding: 4px 17px;
+    border-radius: 5px;
+}
+
+.table thead tr b:hover {
+    background: #3385ff;
+}
+
+.table thead tr span {
+    background: rgb(117,162,195);
+    padding: 5px 7px;
+    border-radius: 6px;
+    color: #fff;
+}
+
+.table thead tr span:hover {
+    background:#3385ff;
+}
+
+.sele {
+    background: #3385ff !important;
+}
+
+.seleNum {
+    color: white;
+    margin: 3px;
+}
+
+.control {
+    display: inline;
+}
+
+.category {
+    height: 100%;
+    overflow: auto;
+}
+
+.category li {
+    text-align: right;
+    margin: 5px auto;
+    width: 50%;
+    min-width: 135px;
+}
+
+.category li span {
+    background: rgb(117,162,195);
+    padding: 5px 14px;
+    color: #fff;
+    border-radius: 5px;
+    max-width: 150px;
+    box-sizing: border-box;
+}
+
+.category li span:hover {
+    background: #3385ff;
+    color: #000;
+}
+
+.category li b {
+    background: #555;
+    color: #fff;
+    padding: 3px 7px;
+    border-radius: 50%;
+}
+
+.category li b:hover {
+    background: #3385ff;
+}
+
+.letter {
+    overflow: auto;
+}
+
+.letter li {
+    text-align: center;
+}
+
+.letter li {
+    margin: 10% 0px;
+}
+
+.letter li span {
+    background:  rgb(117,162,195);
+    padding: 4% 6%;
+    border-radius: 6px;
+    color: #fff;
+}
+
+.letter li span:hover, .letter li span.hover {
+    background:#3385ff;
+}
+
+.selected, .no-selected {
+    height: 100%;
+}
+
+.selected span, .no-selected span {
+    background: #3c8dbc;
+    padding: 5px 14px;
+    color: #fff;
+    border-radius: 5px;
+    margin: 4px 1px;
+    display: inline-block;
+}
+
+.selected span:hover, .no-selected span:hover {
+    background: #3385ff;
+    color: #fff;
+}
+
+input {
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.calledli li {
+    width: 33%;
+    min-width: 135px;
+    float: left;
+    text-align: right;
+}
+
+.category.kw li, .category.sp li {
+    width: 49%;
+    min-width: 135px;
+    float: left;
+    text-align: right;
+    padding-right: 3px;
+}
+
+div.no-selected, div.selected {
+    height: 100%;
+    overflow: auto;
+}
+.checkAll,.CleanAll{
+    display:block;
+    background:rgb(117,162,195);
+    color: #fff;
+    border-radius: 5px;
+    height:30px;
+    line-height:30px;
+    text-align: center;
+    margin:10px 16px;
+}
+.checkAll:hover,.CleanAll:hover,.checkAll.hover,.CleanAll.hover{
+    background: #3385ff;
+}
+.table tbody tr td{
+    padding-left:0px;
+}
+.table thead tr td:first-child{
+    min-width:550px;
+}
+.table thead tr td:nth-child(2){
+    min-width:130px;
+}
+.table thead tr td:nth-child(3){
+    min-width:357px;
+}

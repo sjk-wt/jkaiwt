@@ -1,0 +1,138 @@
+body {
+    min-width: 1100px;
+}
+
+.query-list .edit {
+    width: 220px;
+    float: left;
+}
+
+.query-list .edit li {
+    margin-left: 10px;
+}
+
+.query-list .query > li input, select {
+    height: 25px;
+    line-height: 25px;
+    width: 100px;
+}
+
+.form-horizontal {
+    padding: 0;
+}
+
+.modal-dialog {
+    width: 820px;
+}
+
+.link-a {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.gridRefreshSpan {
+    /*width: 25%;*/
+    float: left;
+    margin-left: 6px;
+    display: inline-block;
+}
+
+.gridLenSpan {
+    width: 75%;
+    float: left;
+    display: inline-block;
+    padding-top: 10px;
+}
+
+.addVoiceFile {
+    width: 100%;
+    padding-right: 10px;
+    display: inline-block;
+}
+
+.refresh span {
+    padding: 5px;
+    background: #ccc;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+input[type="radio"] {
+    margin: 12px 6px 0;
+}
+
+textarea {
+    width: 81%;
+    height: 70px;
+    padding: 10px;
+}
+
+.modal-header {
+    padding: 5px;
+}
+
+.modal-title {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.modal-body ul {
+    height: 25px;
+    line-height: 25px;
+    background: #ddd;
+    margin-bottom: 10px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.modal-body .caption-li {
+    text-align: left !important;
+    width: 100% !important;
+}
+
+.modal-body ul li {
+    float: left;
+    width: 80px;
+    margin-right: 5px;
+    text-align: center;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.modal-body ul li.hover {
+    background: #33cc33;
+}
+
+.modal-body .form_box {
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.speak_detail {
+    height: 180px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.spWavGrid-wrapper {
+    width: 776px;
+    height: 200px;
+    margin: 5px;
+    border: 1px solid rgba(199, 199, 199, 0.8);
+}
+
+.spWav-Canvas {
+    width: 776px;
+    height: 200px;
+    margin: 5px;
+    border: 1px solid rgba(199, 199, 199, 0.8);
+}
+
+.deleteSpeak {
+    font-size: 17px;
+    margin-left: 135px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,4510 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block
+}
+
+body {
+    line-height: 1
+}
+
+ol, ul {
+    list-style: none
+}
+
+blockquote, q {
+    quotes: none
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0
+}
+
+.clearfix {
+    display: inline-block
+}
+
+html[xmlns] .clearfix {
+    display: block
+}
+
+* html
+.clearfix {
+    height: 1%
+}
+
+@font-face {
+    font-family: 'icons';
+    src: url('fonts/icons/icons.eot?-5759cw');
+    src: url('fonts/icons/icons.eot?#iefix-5759cw') format('embedded-opentype'), url('fonts/icons/icons.woff?-5759cw') format('woff'), url('fonts/icons/icons.ttf?-5759cw') format('truetype'), url('fonts/icons/icons.svg?-5759cwicons') format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'NTGent';
+    src: url("fonts/ntgent/NTGent.eot");
+    src: url("fonts/ntgent/NTGent.eot?#iefix") format("embedded-opentype"), url("fonts/ntgent/NTGent.woff") format("woff"), url("fonts/ntgent/NTGent.ttf") format("truetype"), url("fonts/ntgent/NTGent.svg#54d3029add00efb670d55770527c325c") format("svg");
+    font-style: normal;
+    font-weight: 700
+}
+
+@font-face {
+    font-family: 'ITCCentury';
+    src: url(".fonts/itc-century/IT481___.eot");
+    src: url("fonts/itc-century/IT481___.eot?#iefix") format("embedded-opentype"), url("fonts/itc-century/IT481___.woff") format("woff"), url("fonts/itc-century/IT481___.ttf") format("truetype"), url("fonts/itc-century/IT481___.svg#6c1793920e32dcc1caa00565e87ec051") format("svg");
+    font-style: italic;
+    font-weight: 200
+}
+
+html {
+    height: 100%
+}
+
+body {
+    background-color: white;
+    border: 15px solid black;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    behavior: url("scaffold/framework/behaviours/boxsizing.htc");
+    min-height: 100%;
+    text-align: center;
+    font-family: Helvetica;
+    -webkit-font-smoothing: antialiased;
+    font-size: 13px
+}
+
+body
+a {
+    text-decoration: none;
+    color: #000;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+
+body a
+img {
+    border: 0
+}
+
+body
+.cols {
+    zoom: 1
+}
+
+body .cols:before, body .cols:after {
+    content: " ";
+    display: table
+}
+
+body .cols:after {
+    clear: both
+}
+
+body
+.col1 {
+    float: left;
+    width: 100%;
+    margin-bottom: 3%
+}
+
+body
+.col2 {
+    float: left;
+    width: 47.5%;
+    margin-left: 5%;
+    margin-bottom: 5%
+}
+
+body .col2:nth-child(2n-1) {
+    margin-left: 0
+}
+
+body
+.col3 {
+    float: left;
+    width: 31.3333%;
+    margin-left: 3%;
+    margin-bottom: 3%
+}
+
+body .col3:nth-child(3n-2) {
+    margin-left: 0
+}
+
+body .container {
+    width: 1180px;
+    margin: 0 auto;
+    text-align: left
+}
+
+body .container .sidebar {
+    width: 18.3333%
+}
+
+body .container .main {
+    width: 78.6666%
+}
+
+body .container .left {
+    float: left
+}
+
+body .container .right {
+    float: right
+}
+
+body .content {
+    padding: 40px 0px
+}
+
+body p {
+    font-weight: 300;
+    line-height: 26px;
+    margin: 20px 0px;
+    font-size: 13px;
+    font-weight: 200
+}
+
+body p strong {
+    font-weight: bold;
+    color: #000
+}
+
+body p em {
+    font-style: italic;
+    color: #555
+}
+
+body p a {
+    font-weight: bold;
+    color: #000;
+    border-bottom: 1px solid #ccc;
+    transition: all 0.1s ease-in
+}
+
+body p a:hover {
+    border-color: #000;
+    border-width: 3px
+}
+
+body h1, body h2, body h3, body nav a, body nav span {
+    font-family: 'Gotham SSm A', 'Gotham SSm B'
+}
+
+body h4, body h5, body h4 p, body h5 p {
+    font-family: 'Chronicle Display A', 'Chronicle Display B';
+    font-weight: 200;
+    font-style: italic
+}
+
+body h1 {
+    font-size: 55px;
+    font-weight: 200;
+    text-transform: uppercase
+}
+
+body h2 {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 200;
+    margin: 0px 0px 15px;
+    padding-bottom: 10px;
+    border-bottom: 4px solid #000
+}
+
+body h3 {
+    font-size: 20px;
+    color: #282828;
+    text-transform: uppercase;
+    font-weight: 600
+}
+
+body h4 {
+    font-size: 48px;
+    line-height: 60px
+}
+
+body h5 {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #9e9e9e
+}
+
+body .button {
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    border: 4px solid #000;
+    padding: 10px;
+    margin-top: 20px;
+    line-height: 12px;
+    display: inline-block;
+    outline: 0
+}
+
+body .fs-img {
+    display: none
+}
+
+body .heading {
+    border-top: 4px solid #f7f7f7;
+    padding: 50px 0 30px;
+    text-align: center
+}
+
+body .heading h1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: -10px
+}
+
+body .heading h4 {
+    font-size: 17px;
+    color: #7d7d7d;
+    line-height: 30px
+}
+
+body .social {
+    margin-bottom: 70px
+}
+
+body .social a {
+    margin: 0px 5px;
+    border: 4px solid #f7f7f7;
+    display: inline-block;
+    font-size: 20px;
+    transition: all 0.2s ease-in;
+    padding: 10px;
+    font-family: 'icons'
+}
+
+body .social a:hover {
+    border-color: #000
+}
+
+body .social h5 {
+    font-family: 'Gotham SSm A', 'Gotham SSm B';
+    font-weight: 300;
+    font-style: normal;
+    text-transform: none;
+    font-style: italic;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #666
+}
+
+body header {
+    position: relative;
+    zoom: 1
+}
+
+body header:before, body header:after {
+    content: " ";
+    display: table
+}
+
+body header:after {
+    clear: both
+}
+
+body header #logo {
+    width: 90px;
+    float: left;
+    position: relative;
+    margin-top: 40px
+}
+
+body header #logo h1 {
+    display: none
+}
+
+body header #logo img {
+    width: 100%
+}
+
+body header a#burger {
+    width: 230px;
+    height: 50px;
+    /*display: none;*/
+    position: absolute;
+    top: 110px;
+    /*right: 0;*/
+    /*background-image: url("../../../images/layout/mmmmm-hamburger.png");*/
+    background-position: center center;
+    background-repeat: no-repeat;
+    font-family: "华文楷体", "华文行楷", "微软雅黑", "华文琥珀", "楷体", "华文中宋", "华文新魏", "幼圆", "隶书";
+    font-size: 16px;
+    color: orange;
+}
+
+body header nav {
+    float: right
+}
+
+body header nav a {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    behavior: url("scaffold/framework/behaviours/boxsizing.htc");
+    margin-left: 30px;
+    margin-top: 72px;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+    position: relative;
+    color: currentColor;
+    font-family: "华文楷体", "华文行楷", "微软雅黑", "华文琥珀", "楷体", "华文中宋", "华文新魏", "幼圆", "隶书";
+}
+
+body header nav a:before {
+    content: "";
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    height: 0px;
+    background-color: #fff;
+    top: -70px;
+    transition: all 0.1s ease-in
+}
+
+body header nav a:hover:before, body header nav a.active:before {
+    height: 4px;
+    top: -74px
+}
+
+body header nav span {
+    display: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600
+}
+
+body header nav .lang {
+    display: inline;
+    padding-left: 8px;
+    margin-left: 12px;
+    border-left: 4px solid #eee
+}
+
+body header nav .lang a {
+    color: #ccc;
+    margin: 0;
+    margin-left: 10px;
+    display: inline
+}
+
+body header nav .lang a:before {
+    display: none
+}
+
+body header nav .lang a:hover, body header nav .lang
+a.active {
+    color: #000
+}
+
+body
+footer {
+    border-top: 4px solid #f7f7f7;
+    padding: 40px 0
+}
+
+body footer.container {
+    text-align: center;
+    color: #000;
+    font-size: 12px;
+    line-height: 24px;
+    font-family: 'Gotham SSm A', 'Gotham SSm B';
+    font-weight: 500
+}
+
+body footer.container a {
+    color: #000;
+    border-bottom: 1px solid #ccc;
+    transition: all 0.1s ease-in
+}
+
+body footer.container a:hover {
+    border-color: #000;
+    border-width: 3px
+}
+
+body footer.container span {
+    padding: 0px 10px
+}
+
+body #projects {
+    padding-bottom: 0px
+}
+
+body #projects .block {
+    margin-bottom: 35px;
+    position: relative;
+    display: block
+}
+
+body #projects .block .overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    width: auto;
+    height: auto;
+    z-index: 2;
+    margin: 0px;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: all 0.2s ease-in-out 0.1s;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0)
+}
+
+body #projects .block.project h2 {
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    border: 0;
+    font-weight: 600;
+    -webkit-backface-visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s ease-in;
+    z-index: 3
+}
+
+body #projects .block.project h2:before {
+    content: "";
+    width: 30px;
+    border-bottom: 4px solid #fff;
+    height: 0px;
+    display: block;
+    margin-top: -20px;
+    position: absolute;
+    left: 50%;
+    margin-left: -10px
+}
+
+body #projects .block.project h2:after {
+    content: "";
+    width: 30px;
+    border-bottom: 4px solid #fff;
+    height: 0px;
+    display: block;
+    margin-top: 20px;
+    position: absolute;
+    left: 50%;
+    margin-left: -10px
+}
+
+body #projects .block.project h2 i {
+    position: absolute;
+    width: 100%;
+    display: block;
+    left: 0;
+    bottom: -60px;
+    color: #fff;
+    font-style: italic;
+    text-align: center;
+    text-transform: none;
+    font-size: 14px;
+    font-weight: 300
+}
+
+body #projects .block img {
+    display: block;
+    font-size: 0;
+    z-index: 1;
+    position: relative
+}
+
+body #projects .block.text {
+    padding: 0px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    behavior: url("scaffold/framework/behaviours/boxsizing.htc")
+}
+
+body #projects .block.text img {
+    opacity: 0;
+    display: none
+}
+
+body #projects .block.text h2 {
+    padding: 45px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 2;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    behavior: url("scaffold/framework/behaviours/boxsizing.htc");
+    border: 0;
+    text-transform: none;
+    font-size: 24px;
+    line-height: 38px
+}
+
+body #projects .block.text h2 b, body #projects .block.text h2 strong {
+    font-weight: 600
+}
+
+body #projects .block.text h2 p {
+    text-transform: none;
+    line-height: 38px;
+    margin: 0;
+    padding: 0;
+    font-size: 24px
+}
+
+body #projects .block.text .button {
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    border: 4px solid #000;
+    padding: 10px;
+    margin-top: 20px;
+    line-height: 12px;
+    display: inline-block;
+    transition: all 0.2s ease-in
+}
+
+body #projects .block#block-intro {
+    background-color: #000;
+    color: #fff;
+    height: 452px
+}
+
+body #projects .block#block-intro b, body #projects .block#block-intro strong {
+    color: #fff
+}
+
+body #projects .block#block-intro a {
+    color: #fff;
+    font-weight: bold;
+    border-bottom: 1px solid #fff;
+    transition: all 0.1s ease-in
+}
+
+body #projects .block#block-intro a:hover {
+    border-bottom: 4px solid #fff
+}
+
+body #projects .block#block-websites {
+    background-color: #f4f4f4;
+    height: 265px
+}
+
+body #projects .block#block-websites:hover .button {
+    background-color: #000;
+    color: #fff
+}
+
+body #projects .block#block-logos {
+    background-color: #ababab;
+    color: #fff;
+    height: 265px
+}
+
+body #projects .block#block-logos b, body #projects .block#block-logos strong {
+    color: #fff
+}
+
+body #projects .block#block-logos .button {
+    color: #fff;
+    border-color: #fff
+}
+
+body #projects .block#block-logos:hover .button {
+    background-color: #fff;
+    color: #ababab
+}
+
+body #projects .block#the-beach .overlay {
+    background-color: rgba(27, 49, 73, 0.9)
+}
+
+body #projects .block#joost-arijs
+.overlay {
+    background-color: rgba(182, 236, 251, 0.9)
+}
+
+body #projects .block#maison-de-bruges .overlay {
+    background-color: rgba(148, 19, 49, 0.9)
+}
+
+body #projects .block#wijngoed-rhode
+.overlay {
+    background-color: rgba(251, 211, 132, 0.9)
+}
+
+body #projects .block#evelyn-moreels
+.overlay {
+    background-color: rgba(148, 140, 135, 0.9)
+}
+
+body #projects .block#vrijmoed
+.overlay {
+    background-color: rgba(233, 165, 54, 0.9)
+}
+
+body #projects .block#sanseveria
+.overlay {
+    background-color: rgba(123, 80, 11, 0.9)
+}
+
+body #projects .block#luxhome
+.overlay {
+    background-color: #e9d3c4
+}
+
+body #projects .block#lanssens
+.overlay {
+    background-color: #252f38
+}
+
+body #projects .block#tijdvoorkoffie
+.overlay {
+    background-color: #2d2d2d
+}
+
+body #projects .block:hover
+.overlay {
+    margin: 20px;
+    opacity: 1;
+    transition: all 0.2s ease-in-out
+}
+
+body #projects .block:hover
+h2 {
+    opacity: 1;
+    transition: all 0.3s ease-in 0.1s
+}
+
+body
+#about {
+    padding-top: 70px
+}
+
+body #about
+.col3 {
+    width: 370px;
+    height: 395px;
+    margin: 0 35px 36px 0;
+    font-size: 0;
+    position: relative
+}
+
+body #about .col3
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    z-index: 1
+}
+
+body #about .col3.text
+.textHolder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    behavior: url("scaffold/framework/behaviours/boxsizing.htc");
+    padding: 40px;
+    z-index: 2
+}
+
+body #about .col3.text .textHolder
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 30px
+}
+
+body #about .col3.text .textHolder h3:after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 0px;
+    border-bottom: 4px solid #000;
+    margin-top: 20px
+}
+
+body #about .col3.text .textHolder
+h2 {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 80px;
+    margin-top: -40px;
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 30px
+}
+
+body #about
+.col3.text.black {
+    background-color: #000;
+    color: #fff
+}
+
+body #about .col3.text.black
+h3 {
+    color: #fff
+}
+
+body #about .col3.text.black h3:after {
+    border-color: #fff
+}
+
+body #about
+.col3.text.white {
+    background-color: #f5f5f5;
+    color: #383838;
+    float: left
+}
+
+body #about .col3.text.white
+h3 {
+    color: #000
+}
+
+body #about .col3.text.white h3:after {
+    border-color: #000
+}
+
+body #about .col3:nth-child(3), body #about .col3:nth-child(6), body #about .col3:nth-child(10) {
+    float: right !important;
+    margin-right: 0
+}
+
+body #about
+.col3.wide {
+    width: 775px
+}
+
+body #about
+.col3.long {
+    height: 826px
+}
+
+body #logos
+.logo {
+    border: 4px solid #f5f5f5;
+    border-left: 0;
+    border-right: 0;
+    height: 270px;
+    margin-bottom: 0;
+    margin-top: -4px;
+    position: relative;
+    overflow: hidden
+}
+
+body #logos .logo .normal, body #logos .logo
+.hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 1;
+    transition: all 0.2s ease-out;
+    text-align: center;
+    -webkit-transform: translateZ(0)
+}
+
+body #logos .logo .normal img, body #logos .logo .hover
+img {
+    height: 100%;
+    width: auto;
+    margin: 0px auto
+}
+
+body #logos .logo
+.hover {
+    top: 270px;
+    opacity: 0;
+    background-color: #000;
+    background-position: center center;
+    background-size: cover
+}
+
+body #logos .logo .hover
+a.showInfo {
+    display: block;
+    height: 100%
+}
+
+body #logos .logo .hover a.showInfo:hover {
+    cursor: pointer
+}
+
+body #logos .logo .hover a.showInfo
+span {
+    position: absolute;
+    z-index: 4;
+    display: block;
+    top: 0;
+    right: 0;
+    height: 30px;
+    width: 30px;
+    background-color: rgba(0, 0, 0, 0.2)
+}
+
+body #logos .logo .hover a.showInfo span
+i {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 10px;
+    width: 10px;
+    background-image: url("../../../images/layout/more.png");
+    transition: all 0.1s ease-out
+}
+
+body #logos .logo .hover a.showInfo span:hover {
+    background-color: rgba(0, 0, 0, 0.4)
+}
+
+body #logos .logo .hover
+.info {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    behavior: url("scaffold/framework/behaviours/boxsizing.htc");
+    opacity: 0;
+    z-index: 3;
+    padding: 30px;
+    transition: all 0.2s ease-out;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.8)
+}
+
+body #logos .logo .hover .info h2, body #logos .logo .hover .info
+p {
+    color: #fff
+}
+
+body #logos .logo .hover .info
+h2 {
+    border-bottom: 0;
+    line-height: 26px;
+    font-weight: 600;
+    padding: 0
+}
+
+body #logos .logo .hover .info h2:after {
+    content: "";
+    width: 40px;
+    border-bottom: 4px solid #fff;
+    display: block;
+    margin-top: 15px
+}
+
+body #logos .logo .hover .info
+p {
+    margin: 0px 0px 20px
+}
+
+body #logos .logo .hover
+.logoHolder {
+    transition: all 0.2s ease-out
+}
+
+body #logos .logo .hover.active .showInfo
+i {
+    -webkit-transform: rotate(45deg)
+}
+
+body #logos .logo .hover.active
+.info {
+    opacity: 1
+}
+
+body #logos .logo .hover.active
+.logoHolder {
+    opacity: 0
+}
+
+body #logos .logo
+.logoHolder {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-position: center center;
+    background-repeat: no-repeat
+}
+
+body #logos .logo:hover
+.normal {
+    top: -270px;
+    opacity: 0
+}
+
+body #logos .logo:hover
+.hover {
+    top: 0px;
+    opacity: 1
+}
+
+body #logos
+#moreLogo {
+    position: absolute;
+    left: -9999px
+}
+
+body
+#logoDetail {
+    text-align: center
+}
+
+body #logoDetail
+.heading {
+    border-bottom: 4px solid #f7f7f7;
+    margin-bottom: 40px
+}
+
+body #logoDetail .heading h4
+p {
+    margin: 5px auto;
+    font-size: 16px
+}
+
+body #logoDetail .col2
+img {
+    width: 100%;
+    height: auto
+}
+
+body #websites
+.website {
+    border: 4px solid #f5f5f5;
+    border-left: 0;
+    border-right: 0;
+    height: 133px;
+    margin-top: -4px;
+    margin-bottom: 0px;
+    position: relative;
+    overflow: hidden
+}
+
+body #websites .website .normal, body #websites .website
+.hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 1;
+    transition: all 0.2s ease-out;
+    text-align: center;
+    font-weight: 200;
+    -webkit-transform: translateZ(0)
+}
+
+body #websites .website .normal h2, body #websites .website .hover
+h2 {
+    border: 0;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600
+}
+
+body #websites .website .normal
+h2 {
+    margin-top: 50px;
+    margin-bottom: -5px
+}
+
+body #websites .website .normal
+h5 {
+    text-transform: none;
+    font-size: 13px;
+    padding: 0px 30px
+}
+
+body #websites .website
+.hover {
+    top: 133px;
+    opacity: 0;
+    background-color: #000;
+    background-position: center center;
+    background-size: cover;
+    line-height: 133px
+}
+
+body #websites .website .hover
+h2 {
+    color: #fff;
+    font-weight: 600
+}
+
+body #websites .website:hover
+.normal {
+    top: -100px;
+    opacity: 0
+}
+
+body #websites .website:hover
+.hover {
+    top: 0px;
+    opacity: 1
+}
+
+body #logos .heading, body #websites
+.heading {
+    padding-bottom: 40px
+}
+
+body .showcase
+h1 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600
+}
+
+body .showcase
+h2 {
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 13px;
+    font-weight: 700
+}
+
+body .showcase
+h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    border-bottom: 4px solid #f7f7f7;
+    padding-bottom: 15px
+}
+
+body .showcase
+h4 {
+    line-height: 30px
+}
+
+body .showcase
+.container {
+    padding: 60px 0px
+}
+
+body .showcase .container
+img {
+    max-width: 100%;
+    display: block !important;
+    height: auto;
+    margin: 0 auto
+}
+
+body .showcase .logo .container, body .showcase .branding .container, body .showcase .website .container, body .showcase .testimonial
+.container {
+    text-align: center
+}
+
+body .showcase
+.brandbox {
+    position: relative
+}
+
+body .showcase .brandbox
+.container {
+    padding: 50px 0 30px;
+    text-align: center;
+    border-top: 4px solid #f7f7f7
+}
+
+body .showcase .brandbox .container
+h4 {
+    font-size: 17px;
+    color: #7d7d7d;
+    line-height: 40px
+}
+
+body .showcase .brandbox .container
+img {
+    margin-top: 45px
+}
+
+body .showcase .intro
+.container {
+    padding-top: 30px;
+    padding-bottom: 20px
+}
+
+body .showcase
+.logo {
+    position: relative
+}
+
+body .showcase .logo
+img {
+    margin: 120px auto 170px
+}
+
+body .showcase .logo
+.container {
+    z-index: 2
+}
+
+body .showcase .branding
+img {
+    margin-top: 60px
+}
+
+body .showcase .branding
+img.col2 {
+    margin-bottom: 0
+}
+
+body .showcase
+.gallery {
+    width: 100%;
+    position: relative;
+    margin: 60px 0px 40px
+}
+
+body .showcase .gallery nav a.prevSlide, body .showcase .gallery nav
+a.nextSlide {
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -22px;
+    height: 41px;
+    width: 21px;
+    background-position: top left;
+    background-repeat: no-repeat;
+    z-index: 10
+}
+
+body .showcase .gallery nav a.prevSlide:hover, body .showcase .gallery nav a.nextSlide:hover {
+    background-position: bottom left
+}
+
+body .showcase .gallery nav
+a.prevSlide {
+    background-image: url("../../../images/layout/arrow-left-dark.png");
+    left: 0
+}
+
+body .showcase .gallery nav
+a.nextSlide {
+    background-image: url("../../../images/layout/arrow-right-dark.png");
+    right: 0
+}
+
+body .showcase
+.grid {
+    padding: 50px 0px
+}
+
+body .showcase .grid
+.row {
+    zoom: 1
+}
+
+body .showcase .grid .row:before, body .showcase .grid .row:after {
+    content: " ";
+    display: table
+}
+
+body .showcase .grid .row:after {
+    clear: both
+}
+
+body .showcase .website
+.container {
+    padding-bottom: 0px
+}
+
+body .showcase .website
+.webHolder {
+    position: relative;
+    border: 1px solid #dedede;
+    border-top: 0;
+    border-bottom: 0;
+    margin-top: 120px
+}
+
+body .showcase .website .webHolder
+.header {
+    position: absolute;
+    left: -1px;
+    right: 81px;
+    width: auto;
+    height: 51px;
+    top: -51px;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-image: url("../../../images/layout/web-left.png");
+    text-align: left
+}
+
+body .showcase .website .webHolder .header
+a {
+    height: 51px;
+    line-height: 51px;
+    margin-left: 28px;
+    font-size: 10px;
+    font-family: 'Gotham SSm A', 'Gotham SSm B';
+    font-weight: 500;
+    color: #ccc;
+    text-transform: uppercase;
+    transition: all 0.1s ease-in
+}
+
+body .showcase .website .webHolder .header a:hover {
+    color: #666
+}
+
+body .showcase .website .webHolder .header
+i {
+    display: block;
+    position: absolute;
+    height: 51px;
+    width: 82px;
+    right: -82px;
+    top: 0;
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-image: url("../../../images/layout/web-right.png")
+}
+
+body .showcase .website .webHolder
+.websiteHolder {
+    position: relative
+}
+
+body .showcase .website .webHolder .websiteHolder
+img.ratio {
+    z-index: 1
+}
+
+body .showcase .website .webHolder .websiteHolder .flow-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    visibility: hidden
+}
+
+body .showcase
+.testimonial {
+    padding: 50px 0px
+}
+
+body .showcase .testimonial
+h4 {
+    margin: 30px auto;
+    font-size: 32px;
+    line-height: 42px;
+    padding: 20px 10%
+}
+
+body .showcase .testimonial
+span {
+    font-size: 12px;
+    text-transform: uppercase
+}
+
+body .showcase
+.slides {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: auto;
+    line-height: 0;
+    font-size: 0
+}
+
+body .showcase .slides
+.slide {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    margin: 0 !important
+}
+
+body .showcase .slides
+.slide#slide1 {
+    opacity: 1;
+    margin-top: 0;
+    position: relative
+}
+
+body .showcase
+nav.projectNav {
+    text-align: center;
+    margin-top: 30px;
+    position: relative
+}
+
+body .showcase nav.projectNav
+a {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px
+}
+
+body .showcase nav.projectNav
+a.overview {
+    position: relative;
+    width: 200px;
+    height: 41px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    text-align: center;
+    margin-top: 3px
+}
+
+body .showcase nav.projectNav a.overview
+i {
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 25px;
+    left: 50%;
+    margin-left: -10px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    font-family: 'icons';
+    font-size: 21px;
+    color: #aeafb1;
+    font-weight: normal;
+    -webkit-font-smoothing: none
+}
+
+body .showcase nav.projectNav a.overview:hover
+i {
+    color: #333
+}
+
+body .showcase nav.projectNav a.prevProject, body .showcase nav.projectNav
+a.nextProject {
+    width: 200px;
+    height: 41px;
+    line-height: 20px
+}
+
+body .showcase nav.projectNav a.prevProject i, body .showcase nav.projectNav a.nextProject
+i {
+    font-family: 'Didot 64 A', 'Didot 64 B';
+    font-style: italic;
+    text-transform: none;
+    color: #888;
+    font-weight: 200;
+    display: block;
+    font-size: 16px
+}
+
+body .showcase nav.projectNav
+a.prevProject {
+    float: left;
+    text-align: left;
+    padding-left: 50px;
+    background-image: url("../../../images/layout/arrow-left-dark.png");
+    background-position: left top;
+    background-repeat: no-repeat
+}
+
+body .showcase nav.projectNav a.prevProject:hover {
+    background-position: left bottom
+}
+
+body .showcase nav.projectNav
+a.nextProject {
+    float: right;
+    text-align: right;
+    padding-right: 50px;
+    background-image: url("../../../images/layout/arrow-right-dark.png");
+    background-position: right top;
+    background-repeat: no-repeat
+}
+
+body .showcase nav.projectNav a.nextProject:hover {
+    background-position: right bottom
+}
+
+body .showcase .social
+.container {
+    border-top: 4px solid #f7f7f7;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: -80px;
+    padding-top: 50px;
+    padding-bottom: 0px
+}
+
+body #joost-arijs
+h1 {
+    color: #9eddef
+}
+
+body #joost-arijs
+.logo {
+    background-color: #fbfbfb;
+    background-image: url("../../../images/content/work/joost-arijs/joost-arijs-logo-bg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+body #joost-arijs .logo
+img {
+    margin: 120px auto 120px
+}
+
+body #joost-arijs .branding
+img {
+    float: left;
+    margin-top: 80px;
+    margin-bottom: 0;
+    width: auto;
+    margin-left: 0
+}
+
+body #joost-arijs .branding img#branding2, body #joost-arijs .branding
+img#branding3 {
+    float: right
+}
+
+body #joost-arijs
+.testimonial {
+    background-color: #9eddef;
+    color: #fff
+}
+
+body #joost-arijs .testimonial
+h2 {
+    border-color: #fff
+}
+
+body #joost-arijs .testimonial
+span {
+    color: #fff
+}
+
+body #luxhome
+h1 {
+    color: #181617
+}
+
+body #luxhome
+.logo {
+    background: #ececec;
+    background: -moz-linear-gradient(top, #ececec 0%, #e9d3c4 100%);
+    background: -webkit-linear-gradient(top, #ececec 0%, #e9d3c4 100%);
+    background: linear-gradient(to bottom, #ececec 0%, #e9d3c4 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ececec', endColorstr='#e9d3c4', GradientType=0)
+}
+
+body #luxhome .logo
+h2 {
+    color: #fff;
+    border-color: #fff
+}
+
+body #luxhome .branding .col2.no-border {
+    margin-left: 0
+}
+
+body #luxhome .branding
+.col2.border {
+    margin-left: 5%
+}
+
+body #luxhome
+.testimonial {
+    background: #373737;
+    color: #fff
+}
+
+body #luxhome .testimonial
+h2 {
+    border-color: #fff
+}
+
+body #luxhome .testimonial
+span {
+    color: #9a9a9a
+}
+
+body
+#ntgent {
+    background-image: url('../../../images/content/work/ntgent/bg.png');
+    background-repeat: repeat-x;
+    background-position: center
+}
+
+body #ntgent
+h1 {
+    color: #181617
+}
+
+body #ntgent .showcase .brandbox
+.container {
+    padding-bottom: 0
+}
+
+body #ntgent .imageHolder
+img {
+    max-width: 100%;
+    width: 100%
+}
+
+body #ntgent
+.logo {
+    background: url('../../../images/content/work/ntgent/bg.jpg');
+    background-size: cover
+}
+
+body #ntgent .logo
+h2 {
+    color: #fff;
+    border-color: #fff
+}
+
+body #ntgent .logo
+img {
+    margin: 145px auto 130px
+}
+
+body #ntgent
+h3.ntgent {
+    font-family: 'NTGent';
+    font-size: 40px;
+    line-height: 70px;
+    letter-spacing: 2px;
+    border: 0;
+    margin-bottom: 100px;
+    word-break: break-all
+}
+
+body #ntgent
+h3.ntgent.regular {
+    margin-bottom: 40px;
+    word-break: normal;
+    line-height: 32px
+}
+
+body #ntgent .center-block {
+    margin: 215px 0 200px 0
+}
+
+body #ntgent
+h5.special {
+    font-family: 'ITCCentury';
+    text-transform: none;
+    color: #000;
+    font-size: 20px;
+    font-weight: 200;
+    margin-bottom: 100px
+}
+
+body #ntgent .fs-img.special {
+    position: relative;
+    left: 50%;
+    margin-left: -226px;
+    margin-bottom: 30px
+}
+
+body #ntgent .fs-img.large {
+    margin: 180px 0 160px 0
+}
+
+body #ntgent
+.testimonial {
+    padding: 0;
+    background: #000;
+    color: #fff
+}
+
+body #ntgent .testimonial
+h2 {
+    border-color: #fff
+}
+
+body #ntgent .testimonial
+span {
+    color: #9a9a9a
+}
+
+body #ntgent .testimonial
+h4 {
+    font-size: 28px
+}
+
+body #lanssens
+h1 {
+    color: #181617
+}
+
+body #lanssens
+.imageHolder {
+    margin: 20px 0px 30px
+}
+
+body #lanssens .imageHolder
+img {
+    width: 100%;
+    height: auto
+}
+
+body #lanssens
+.logo {
+    background-color: #252f38
+}
+
+body #lanssens .logo
+h2 {
+    color: #fff;
+    border-color: #fff
+}
+
+body #lanssens .logo
+img {
+    margin: 145px auto 130px
+}
+
+body #lanssens .branding
+.cols {
+    margin-top: 60px
+}
+
+body #lanssens .branding .cols
+.col2 {
+    width: 50%;
+    margin-left: 0%;
+    margin-bottom: 0%
+}
+
+body #lanssens .branding .cols .col2
+img {
+    margin-top: 0px
+}
+
+body #lanssens .branding#branding-part-2
+.container {
+    width: 100%
+}
+
+body #lanssens .branding#branding-part-2
+.gallery {
+    margin-top: 0px
+}
+
+body #lanssens .quote
+h4 {
+    font-family: "Mercury Display A", "Mercury Display B";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    font-size: 26px;
+    color: #2b2b2b
+}
+
+body #lanssens .quote .yellow-border {
+    height: 3px;
+    width: 70px;
+    display: block;
+    background-color: #d7be7f;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    margin-top: 35px
+}
+
+body #lanssens
+.testimonial {
+    background: #252f38;
+    color: #fff
+}
+
+body #lanssens .testimonial
+h2 {
+    border-color: #fff
+}
+
+body #lanssens .testimonial
+span {
+    color: #9a9a9a
+}
+
+body #rodania
+h1 {
+    color: #181617
+}
+
+body #rodania
+.logo {
+    background-color: #181617;
+    background-image: url("../../../images/content/work/rodania/rodania-logo-bg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff
+}
+
+body #rodania .logo
+h2 {
+    color: #fff;
+    border-color: #fff
+}
+
+body #rodania .logo
+img {
+    margin: 180px auto 200px
+}
+
+body #rodania .history
+.container {
+    text-align: center;
+    padding-bottom: 0px;
+    padding-top: 120px
+}
+
+body #rodania .history .container
+.cols {
+    margin: 90px auto 0px
+}
+
+body #rodania .history .container
+img {
+    margin: 30px auto
+}
+
+body #rodania .history .container
+h2 {
+    border: 0;
+    font-size: 23px;
+    line-height: 40px
+}
+
+body #rodania .history .container
+p {
+    font-style: italic
+}
+
+body #rodania .branding
+.container {
+    text-align: center
+}
+
+body #rodania .branding
+h2 {
+    margin-bottom: 40px
+}
+
+body #rodania .branding
+img.col2 {
+    width: 47.5%
+}
+
+body #rodania .branding
+img#branding5 {
+    float: right
+}
+
+body #rodania .website
+h2 {
+    margin-bottom: 30px
+}
+
+body #rodania .website
+object {
+    width: 100%;
+    height: auto
+}
+
+body #rodania
+.testimonial {
+    background-color: #0a0a0a;
+    color: #fff
+}
+
+body #rodania .testimonial
+h2 {
+    border-color: #fff
+}
+
+body #rodania .testimonial
+span {
+    color: #434343
+}
+
+body #vrijmoed
+h1 {
+    color: #d9a540
+}
+
+body #vrijmoed
+.logo {
+    background-color: #181617;
+    color: #fff
+}
+
+body #vrijmoed .logo
+h2 {
+    color: #fff;
+    border-color: #fff
+}
+
+body #vrijmoed .logo
+img {
+    margin: 170px auto 220px
+}
+
+body #vrijmoed .branding
+.container {
+    padding-bottom: 0px
+}
+
+body #vrijmoed .branding
+.container.secondary {
+    padding-top: 0
+}
+
+body #vrijmoed .branding
+img#branding2 {
+    margin: 150px auto
+}
+
+body #vrijmoed .branding
+img#branding6 {
+    margin-top: 0px
+}
+
+body #vrijmoed .branding
+img.col3 {
+    width: 29.55%;
+    margin-left: 5.666%
+}
+
+body #vrijmoed .branding img.col3:nth-child(3n-2) {
+    margin-left: 0
+}
+
+body #vrijmoed .branding
+.imageHolder {
+    position: relative;
+    background-image: url("../../../images/content/work/vrijmoed/vrijmoed-lines.png");
+    background-position: center top;
+    background-repeat: no-repeat
+}
+
+body #vrijmoed .branding .imageHolder
+.col2 {
+    width: 47.5%
+}
+
+body #vrijmoed .branding .imageHolder
+img {
+    position: relative;
+    z-index: 99;
+    margin: 0 auto !important;
+    display: block
+}
+
+body #vrijmoed .branding .imageHolder
+img#branding3b {
+    float: right
+}
+
+body #vrijmoed .branding
+.disclaimer {
+    font-size: 12px;
+    font-style: italic;
+    color: #aaa;
+    font-family: 'Gotham SSm A', 'Gotham SSm B';
+    font-weight: 200;
+    padding-bottom: 40px
+}
+
+body #vrijmoed
+.testimonial {
+    background-color: #181617;
+    color: #fff
+}
+
+body #vrijmoed .testimonial
+h2 {
+    color: #fff;
+    border-color: #fff
+}
+
+body #vrijmoed .testimonial
+span {
+    color: #fff
+}
+
+body #moreels
+h1 {
+    color: #928c87
+}
+
+body #moreels
+.logo {
+    background-color: #373737;
+    color: #fff
+}
+
+body #moreels .logo
+h2 {
+    color: #fff;
+    border-color: #fff
+}
+
+body #moreels .branding
+h2 {
+    color: #373737;
+    border-color: #373737
+}
+
+body #moreels .branding
+img#branding5 {
+    float: right
+}
+
+body #moreels .website
+h2 {
+    color: #373737;
+    border-color: #373737
+}
+
+body #moreels
+.testimonial {
+    background-color: #373737;
+    color: #fff
+}
+
+body #moreels .testimonial
+h2 {
+    color: #fff;
+    border-color: #fff
+}
+
+body #moreels .testimonial
+span {
+    color: #9a9a9a
+}
+
+body #maison-de-bruges
+h1 {
+    color: #9b9083
+}
+
+body #maison-de-bruges
+.logo {
+    background-color: #f7f7f8;
+    color: #181617
+}
+
+body #maison-de-bruges .logo
+h2 {
+    color: #181617;
+    border-color: #181617
+}
+
+body #maison-de-bruges .logo
+img {
+    margin: 120px auto 170px
+}
+
+body #maison-de-bruges .logo
+.bg {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0px;
+    z-index: 1;
+    height: 200px;
+    background-image: url("../../../images/content/work/maison-de-bruges/maison-de-bruges-bg1.png");
+    background-position: center bottom;
+    background-repeat: no-repeat
+}
+
+body #maison-de-bruges
+.branding {
+    padding: 40px 0px;
+    background-color: #181617
+}
+
+body #maison-de-bruges .branding
+h2 {
+    color: #fff;
+    border-color: #fff
+}
+
+body #maison-de-bruges .branding
+img {
+    margin: 60px auto 0px
+}
+
+body #maison-de-bruges .branding
+img.col3 {
+    width: 29%;
+    margin-left: 5.666%
+}
+
+body #maison-de-bruges .branding img.col3:nth-child(3n-2) {
+    margin-left: 0
+}
+
+body #maison-de-bruges .branding
+.quote {
+    color: #fff;
+    padding: 100px 10%
+}
+
+body #maison-de-bruges .branding .quote
+h4 {
+    font-size: 30px;
+    line-height: 50px;
+    font-style: normal;
+    text-transform: uppercase;
+    margin: 40px auto
+}
+
+body #maison-de-bruges .branding .quote
+h5 {
+    font-family: 'Gotham SSm A', 'Gotham SSm B';
+    font-weight: 300;
+    font-style: normal
+}
+
+body #maison-de-bruges .branding#branding-part-1 {
+    padding-bottom: 100px;
+    position: relative
+}
+
+body #maison-de-bruges .branding#branding-part-1
+.container {
+    z-index: 2
+}
+
+body #maison-de-bruges .branding#branding-part-1
+.bg {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0px;
+    z-index: 1;
+    height: 200px;
+    background-image: url("../../../images/content/work/maison-de-bruges/maison-de-bruges-bg2.png");
+    background-position: center bottom;
+    background-repeat: no-repeat
+}
+
+body #maison-de-bruges .branding#branding-part-2 {
+    background-color: #fff
+}
+
+body #maison-de-bruges .branding
+#branding1 {
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+    height: auto;
+    margin-top: 60px
+}
+
+body #maison-de-bruges .branding #branding1
+img {
+    margin: 0 auto;
+    display: block;
+    max-width: 100%
+}
+
+body #maison-de-bruges
+.testimonial {
+    background-color: #181617;
+    color: #fff
+}
+
+body #maison-de-bruges .testimonial
+h2 {
+    color: #fff;
+    border-color: #fff
+}
+
+body #maison-de-bruges .testimonial
+span {
+    color: #939293
+}
+
+body #sanseveria
+h1 {
+    color: #8e431c
+}
+
+body #sanseveria
+.logo {
+    background-color: #f7f7f9;
+    color: #181617
+}
+
+body #sanseveria .logo
+h2 {
+    color: #181617;
+    border-color: #181617
+}
+
+body #sanseveria .logo
+img {
+    margin: 120px auto 170px
+}
+
+body #sanseveria .logo
+.bg {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0px;
+    z-index: 1;
+    height: 200px;
+    background-image: url("../../../images/content/work/sanseveria/sanseveria-bg-1.png");
+    background-position: center bottom;
+    background-repeat: no-repeat
+}
+
+body #sanseveria
+.branding {
+    padding: 40px 0px;
+    background-color: #181617
+}
+
+body #sanseveria .branding
+h2 {
+    color: #fff;
+    border-color: #fff
+}
+
+body #sanseveria .branding
+img {
+    margin: 60px auto 0px
+}
+
+body #sanseveria .branding
+img.col3 {
+    width: 29%;
+    margin-left: 5.666%
+}
+
+body #sanseveria .branding img.col3:nth-child(3n-2) {
+    margin-left: 0
+}
+
+body #sanseveria .branding
+.quote {
+    color: #fff;
+    padding: 0px
+}
+
+body #sanseveria .branding .quote
+h4 {
+    font-size: 30px;
+    line-height: 50px;
+    font-style: normal;
+    text-transform: uppercase;
+    margin: 40px auto
+}
+
+body #sanseveria .branding .quote
+h5 {
+    font-family: 'Gotham SSm A', 'Gotham SSm B';
+    font-weight: 300;
+    font-style: normal
+}
+
+body #sanseveria .branding#branding-part-1 {
+    padding-bottom: 200px;
+    position: relative
+}
+
+body #sanseveria .branding#branding-part-1
+.container {
+    z-index: 2
+}
+
+body #sanseveria .branding#branding-part-1
+.bg {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0px;
+    z-index: 1;
+    height: 200px;
+    background-image: url("../../../images/content/work/sanseveria/sanseveria-bg-2.png");
+    background-position: center bottom;
+    background-repeat: no-repeat
+}
+
+body #sanseveria .branding#branding-part-2 {
+    background-color: #fff
+}
+
+body #sanseveria .branding#branding-part-2
+.col2 {
+    width: 47.5%;
+    float: left;
+    margin-left: 5%;
+    margin-top: 0px
+}
+
+body #sanseveria .branding#branding-part-2 .col2:first-child {
+    margin-left: 0
+}
+
+body #sanseveria .branding
+#branding1 {
+    width: 100%;
+    text-align: center;
+    height: auto;
+    margin-top: 60px
+}
+
+body #sanseveria .branding #branding1
+img {
+    margin: 0 auto;
+    display: block;
+    max-width: 100%
+}
+
+body #sanseveria
+.testimonial {
+    background-color: #181617;
+    color: #fff
+}
+
+body #sanseveria .testimonial
+h2 {
+    color: #fff;
+    border-color: #fff
+}
+
+body #sanseveria .testimonial
+span {
+    color: #939293
+}
+
+body #the-beach
+h1 {
+    color: #726462
+}
+
+body #the-beach
+.imageHolder {
+    margin: 0px 0px 30px
+}
+
+body #the-beach .imageHolder
+img {
+    width: 100%;
+    height: auto
+}
+
+body #the-beach
+.logo {
+    background-color: #393b4f;
+    transition: all 0.5s ease-in;
+    color: #fff
+}
+
+body #the-beach .logo
+h2 {
+    color: #fff;
+    border-color: #fff
+}
+
+body #the-beach .logo
+img#logo1 {
+    margin: 170px auto 200px;
+    transition: all 0.5s ease-in
+}
+
+body #the-beach .logo
+img#logo2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -188px !important;
+    margin-top: -155px !important;
+    opacity: 0;
+    transition: all 0.5s ease-in
+}
+
+body #the-beach
+.logo.showLogo2 {
+    background-color: #e8e1db
+}
+
+body #the-beach .logo.showLogo2
+img#logo1 {
+    opacity: 0
+}
+
+body #the-beach .logo.showLogo2
+img#logo2 {
+    opacity: 1
+}
+
+body #the-beach .logo
+.container {
+    position: relative
+}
+
+body #the-beach .logo a.arrowLeft, body #the-beach .logo
+a.arrowRight {
+    width: 21px;
+    height: 41px;
+    background-position: top left;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    z-index: 99
+}
+
+body #the-beach .logo a.arrowLeft:hover, body #the-beach .logo a.arrowRight:hover {
+    background-position: bottom left
+}
+
+body #the-beach .logo
+a.arrowLeft {
+    background-image: url("../../../images/layout/arrow-left-light-thick.png");
+    left: 0px
+}
+
+body #the-beach .logo
+a.arrowRight {
+    background-image: url("../../../images/layout/arrow-right-light-thick.png");
+    right: 0px
+}
+
+body #the-beach .branding
+h2 {
+    color: #373737;
+    border-color: #373737
+}
+
+body #the-beach .branding
+img {
+    margin: 60px auto 0px
+}
+
+body #the-beach .branding
+img#branding4 {
+    width: auto;
+    max-width: 47.5%
+}
+
+body #the-beach .branding
+img#branding5 {
+    float: right;
+    width: auto;
+    max-width: 47.5%
+}
+
+body #the-beach .branding
+#branding2 {
+    background-image: url("../../../images/content/work/the-beach/the-beach-branding-2.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 150px 0px;
+    margin-top: 60px;
+    font-family: 'Chronicle Display A', 'Chronicle Display B';
+    font-weight: 200;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 45px;
+    color: #666
+}
+
+body #the-beach .branding #branding2
+b {
+    font-weight: 400;
+    color: #c9b571
+}
+
+body #the-beach .branding
+#branding6 {
+    max-width: 600px
+}
+
+body #the-beach
+.disclaimer {
+    font-size: 12px;
+    font-style: italic;
+    color: #aaa;
+    font-family: 'Gotham SSm A', 'Gotham SSm B';
+    font-weight: 200;
+    padding-top: 20px
+}
+
+body #the-beach
+.website {
+    margin-top: -70px
+}
+
+body #the-beach .website
+h2 {
+    color: #373737;
+    border-color: #373737
+}
+
+body #the-beach
+.testimonial {
+    background-color: #1b3149;
+    color: #fff
+}
+
+body #the-beach .testimonial
+h2 {
+    color: #fff;
+    border-color: #fff
+}
+
+body #the-beach .testimonial
+span {
+    color: #fff
+}
+
+body #wijngoed-rhode
+h1 {
+    color: #eebf80
+}
+
+body #wijngoed-rhode
+.imageHolder {
+    margin: 0px 0px 30px
+}
+
+body #wijngoed-rhode .imageHolder
+img {
+    width: 100%;
+    height: auto
+}
+
+body #wijngoed-rhode
+.logo {
+    background-color: #eebf80;
+    color: #fff
+}
+
+body #wijngoed-rhode .logo
+h2 {
+    color: #fff;
+    border-color: #fff
+}
+
+body #wijngoed-rhode .logo
+img {
+    margin: 140px auto 190px
+}
+
+body #wijngoed-rhode .branding
+h2 {
+    color: #373737;
+    border-color: #373737
+}
+
+body #wijngoed-rhode .branding
+img {
+    margin: 60px auto 0px
+}
+
+body #wijngoed-rhode .branding
+img#branding3 {
+    width: auto
+}
+
+body #wijngoed-rhode .branding
+img#branding4 {
+    float: right;
+    width: auto
+}
+
+body #wijngoed-rhode
+.website {
+    margin-top: -70px
+}
+
+body #wijngoed-rhode .website
+h2 {
+    color: #373737;
+    border-color: #373737
+}
+
+body #wijngoed-rhode
+.testimonial {
+    background-color: #eebf80;
+    color: #fff
+}
+
+body #wijngoed-rhode .testimonial
+h2 {
+    color: #fff;
+    border-color: #fff
+}
+
+body #wijngoed-rhode .testimonial
+span {
+    color: #fff
+}
+
+body #errorpage
+h1 {
+    color: #29a39e
+}
+
+body #errorpage .intro
+.button {
+    border-color: #29a39e;
+    color: #29a39e;
+    display: table
+}
+
+body #errorpage .intro .button:hover {
+    border: 4px solid #29a39e;
+    background-color: #29a39e;
+    color: #fff
+}
+
+body #errorpage
+.logo {
+    background-color: #29a39e;
+    color: #fff
+}
+
+body #errorpage .logo
+h2 {
+    color: #fff;
+    border-color: #fff
+}
+
+body #errorpage .logo
+img {
+    margin: 220px auto 250px
+}
+
+body #errorpage .branding
+h2 {
+    color: #373737;
+    border-color: #373737
+}
+
+body #errorpage .branding
+img#branding2 {
+    width: auto;
+    max-width: 47.5%
+}
+
+body #errorpage .branding
+img#branding3 {
+    float: right;
+    width: auto;
+    max-width: 47.5%
+}
+
+body #errorpage .website
+h2 {
+    color: #373737;
+    border-color: #373737
+}
+
+body #errorpage
+.testimonial {
+    background-color: #1b1a1b;
+    color: #fff
+}
+
+body #errorpage .testimonial
+h2 {
+    color: #fff;
+    border-color: #fff
+}
+
+body #errorpage .testimonial
+a {
+    color: #9a9a9a;
+    text-transform: uppercase
+}
+
+body #errorpage .testimonial a:hover {
+    color: #fff
+}
+
+body
+.news {
+    zoom: 1;
+    padding-bottom: 0px
+}
+
+body .news:before, body .news:after {
+    content: " ";
+    display: table
+}
+
+body .news:after {
+    clear: both
+}
+
+body .news
+.newsItem {
+    border-bottom: 4px solid #f5f5f5;
+    margin-bottom: 60px
+}
+
+body .news .newsItem h2 {
+    font-size: 20px;
+    border: 0;
+    margin: 40px 0 -3px;
+    font-weight: 600
+}
+
+body .news .newsItem h5 {
+    margin: 0 0 25px
+}
+
+body .news .newsItem .newsThumb {
+    position: relative;
+    overflow: hidden
+}
+
+body .news .newsItem .newsThumb .overlay {
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    opacity: 0;
+    margin: 0px;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2;
+    transition: all 0.2s ease-in-out 0.1s;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0)
+}
+
+body .news .newsItem .newsThumb h2 {
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    border: 0;
+    font-weight: 600;
+    -webkit-backface-visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s ease-in;
+    z-index: 3
+}
+
+body .news .newsItem .newsThumb h2:before {
+    content: "";
+    width: 30px;
+    border-bottom: 4px solid #fff;
+    height: 0px;
+    display: block;
+    margin-top: -40px;
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
+    transition: all 0.2s ease-in
+}
+
+body .news .newsItem .newsThumb h2:after {
+    content: "";
+    width: 30px;
+    border-bottom: 4px solid #fff;
+    height: 0px;
+    display: block;
+    margin-top: 40px;
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
+    transition: all 0.2s ease-in
+}
+
+body .news .newsItem .newsThumb h2 i {
+    position: absolute;
+    width: 100%;
+    display: block;
+    left: 0;
+    bottom: -60px;
+    color: #fff;
+    font-style: italic;
+    text-align: center;
+    text-transform: none;
+    font-size: 14px;
+    font-weight: 300
+}
+
+body .news .newsItem .newsThumb img {
+    display: block;
+    font-size: 0;
+    z-index: 1;
+    position: relative;
+    width: 370px;
+    height: 278px;
+}
+
+body .news .newsItem.productfm .newsThumb img {
+    display: block;
+    font-size: 0;
+    z-index: 1;
+    position: relative;
+    width: 370px;
+    height: 615px;
+}
+
+body .news .newsItem .newsContent {
+    height: 210px;
+}
+
+.newsContent * {
+    font-family: "华文楷体", "华文行楷", "微软雅黑", "华文琥珀", "楷体", "华文中宋", "华文新魏", "幼圆", "隶书";
+}
+
+body .news .newsItem:hover .newsThumb .overlay {
+    margin: 10px;
+    opacity: 0.9;
+    transition: all 0.2s ease-in-out
+}
+
+body .news .newsItem:hover .newsThumb h2 {
+    opacity: 1;
+    transition: all 0.3s ease-in 0.1s
+}
+
+body .news .newsItem:hover .newsThumb h2:before {
+    margin-top: -20px;
+    transition: all 0.15s ease-in 0.1s
+}
+
+body .news .newsItem:hover .newsThumb h2:after {
+    margin-top: 16px;
+    transition: all 0.15s ease-in 0.1s
+}
+
+body .news
+.newsFull {
+    padding-bottom: 70px
+}
+
+body .news .newsFull
+.newsHeader {
+    border: 4px solid #f5f5f5;
+    border-left: 0;
+    border-right: 0;
+    margin-bottom: 30px;
+    padding: 50px 0 30px;
+    text-align: left
+}
+
+body .news .newsFull .newsHeader h1 {
+    font-size: 35px;
+    font-weight: 600;
+    margin-top: -10px;
+    font-family: "华文楷体", "华文行楷", "微软雅黑", "华文琥珀", "楷体", "华文中宋", "华文新魏", "幼圆", "隶书";
+}
+
+body .news .newsFull .newsHeader
+h4 {
+    font-size: 17px;
+    color: #7d7d7d;
+    line-height: 30px
+}
+
+body .news .newsFull .newsHeader h4
+p {
+    margin: 0;
+    font-size: 17px
+}
+
+body .news .newsFull
+img {
+    height: auto !important;
+    border-color: #ddd
+}
+
+body .news .newsFull
+img.col3 {
+    width: auto;
+    margin-left: 25px;
+    border: 1px solid #f5f5f5
+}
+
+body .news .newsFull img.col3:nth-child(3n-2) {
+    margin-left: 0
+}
+
+body .news .newsFull
+h3 {
+    font-weight: 600;
+    font-size: 18px;
+    border-bottom: 4px solid #f5f5f5;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    margin-top: 40px
+}
+
+body .news .newsFull
+ul {
+    margin-top: 10px
+}
+
+body .news .newsFull ul
+li {
+    margin-bottom: 10px;
+    line-height: 28px;
+    font-family: Helvetica;
+    font-size: 13px;
+    background-image: url("../../../images/layout/list.png");
+    background-position: 7px 6px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+    font-weight: 200
+}
+
+body .news
+nav {
+    border-top: 4px solid #f5f5f5
+}
+
+body .news nav
+a {
+    border-bottom: 4px solid #f5f5f5;
+    display: block;
+    padding: 22px 0px 20px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    behavior: url("scaffold/framework/behaviours/boxsizing.htc");
+    text-transform: uppercase;
+    padding-top: 19px;
+    padding-left: 5px;
+    transition: all 0.2s ease-in
+}
+
+body .news nav a h3 {
+    font-size: 18px;
+    margin-bottom: 4px;
+    font-weight: 600;
+    line-height: 20px;
+    font-family: "华文楷体", "华文行楷", "微软雅黑", "华文琥珀", "楷体", "华文中宋", "华文新魏", "幼圆", "隶书";
+}
+
+body .news nav a:hover {
+    border-bottom-color: #333
+}
+
+body .news nav a.all {
+    border: 0
+}
+
+body .news
+a.overview {
+    position: relative;
+    width: 200px;
+    height: 41px;
+    display: block;
+    margin: -30px auto 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    display: none;
+    text-align: center
+}
+
+body .news a.overview
+i {
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 25px;
+    left: 50%;
+    margin-left: -10px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    font-family: 'icons';
+    font-size: 21px;
+    color: #aeafb1;
+    font-weight: normal;
+    -webkit-font-smoothing: none
+}
+
+body .news a.overview:hover
+i {
+    color: #333
+}
+
+body
+#contact {
+    padding-top: 70px;
+    text-align: center
+}
+
+body #contact
+.heading {
+    border-top: 4px solid #f7f7f7;
+    border-bottom: 4px solid #f7f7f7;
+    padding: 50px 0 30px;
+    text-align: center
+}
+
+body #contact .heading
+h1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: -10px
+}
+
+body #contact .heading
+h4 {
+    font-size: 17px;
+    color: #7d7d7d;
+    line-height: 30px
+}
+
+body #contact .heading h4
+p {
+    margin: 0;
+    font-size: 17px
+}
+
+body #contact
+.cols {
+    text-align: left
+}
+
+body #contact
+.button {
+    margin-top: 50px;
+    display: inline-block;
+    border-color: #000;
+    transition: all 0.2s ease-in;
+    -webkit-font-smoothing: antialiased
+}
+
+body #contact .button:hover {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer
+}
+
+body
+#successMessage {
+    display: none;
+    padding-top: 70px;
+    border-top: 4px solid #f7f7f7
+}
+
+body #successMessage
+h1 {
+    font-size: 60px;
+    font-weight: 600
+}
+
+body #successMessage
+h4 {
+    font-size: 17px;
+    color: #7d7d7d;
+    line-height: 30px
+}
+
+body form
+.cols {
+    margin: 0
+}
+
+body form
+.input {
+    height: 78px;
+    line-height: 78px;
+    background-image: url("../../../images/layout/input-bg.png");
+    background-position: top left;
+    background-repeat: repeat;
+    position: relative;
+    margin-bottom: 0px !important
+}
+
+body form .input:hover {
+    cursor: text
+}
+
+body form .input
+input {
+    float: left;
+    height: 75px;
+    line-height: 78px;
+    font-style: italic
+}
+
+body form .input
+span {
+    float: left;
+    font-family: 'Gotham SSm A', 'Gotham SSm B';
+    font-size: 15px;
+    font-weight: 300;
+    font-style: italic;
+    max-width: 50%
+}
+
+body form
+.textarea {
+    height: 234px;
+    line-height: 78px;
+    position: relative;
+    margin-bottom: 0px !important
+}
+
+body form .textarea:hover {
+    cursor: text
+}
+
+body form .textarea
+textarea {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    resize: none;
+    background-image: url("../../../images/layout/input-bg.png");
+    background-position: top left;
+    background-repeat: repeat;
+    line-height: 78px;
+    text-indent: 185px;
+    font-style: italic
+}
+
+body form .textarea
+span {
+    display: block;
+    position: absolute;
+    height: 78px;
+    line-height: 78px;
+    font-family: 'Gotham SSm A', 'Gotham SSm B';
+    font-size: 15px;
+    font-weight: 300;
+    font-style: italic;
+    z-index: 98
+}
+
+body form .input.error span, body form .textarea.error
+span {
+    color: #da4e3f
+}
+
+body form input, body form
+textarea {
+    display: block;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    behavior: url("scaffold/framework/behaviours/boxsizing.htc");
+    outline: 0;
+    border: 0;
+    padding: 0px;
+    margin-bottom: 0px !important;
+    font-family: 'Gotham SSm A', 'Gotham SSm B';
+    font-size: 15px;
+    font-weight: 600;
+    position: relative;
+    width: 50%
+}
+
+body form input::-webkit-input-placeholder, body form textarea::-webkit-input-placeholder {
+    font-style: italic;
+    color: #000
+}
+
+body form input:-moz-placeholder, body form textarea:-moz-placeholder {
+    font-style: italic;
+    color: #000
+}
+
+body form input::-moz-placeholder, body form textarea::-moz-placeholder {
+    font-style: italic;
+    color: #000
+}
+
+body form input:-ms-input-placeholder, body form textarea:-ms-input-placeholder {
+    font-style: italic;
+    color: #000
+}
+
+body form input.error, body form
+textarea.error {
+    border-color: red
+}
+
+body form input#honee, body form
+textarea#honee {
+    position: absolute;
+    left: -9999px
+}
+
+body form .required-item {
+    position: relative
+}
+
+body form .required-item:after {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 20px;
+    width: 20px;
+    top: 50%;
+    margin-top: -10px;
+    right: 5px;
+    background-image: url("../../../images/layout/required.png")
+}
+
+body form
+a.button {
+    display: block
+}
+
+body form a.button:hover {
+    cursor: pointer
+}
+
+body form
+.select {
+    position: relative;
+    z-index: 99;
+    height: 78px;
+    line-height: 78px;
+    background-image: url("../../../images/layout/input-bg.png");
+    font-family: 'Gotham SSm A', 'Gotham SSm B';
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 0px
+}
+
+body form .select
+.selectedOption {
+    height: 100%;
+    height: 100%;
+    line-height: 78px;
+    z-index: 100;
+    position: relative;
+    background-image: url("../../../images/layout/dropdown.png");
+    background-position: right top;
+    background-repeat: repeat-y;
+    font-style: italic
+}
+
+body form .select .selectedOption
+b {
+    font-weight: 600
+}
+
+body form .select.active
+.selectedOption {
+    background-position: right bottom
+}
+
+body form .select
+.selectList {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    behavior: url("scaffold/framework/behaviours/boxsizing.htc");
+    position: absolute;
+    display: none;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1)
+}
+
+body form .select .selectList
+a {
+    text-decoration: none;
+    display: block;
+    background-image: url("../../../images/layout/input-bg.png");
+    background-position: left bottom;
+    line-height: 40px;
+    height: 40px;
+    padding: 10px
+}
+
+body form .select .selectList a:last-child {
+    background-image: none
+}
+
+body form .select .selectList a:hover {
+    background-color: #000;
+    cursor: pointer;
+    color: #fff
+}
+
+body form .select.active
+.selectList {
+    display: block
+}
+
+body form .select.error
+.selectedOption {
+    background-color: red;
+    color: white
+}
+
+@media only screen and (max-width: 1280px) {
+    .container {
+        width: 900px !important
+    }
+
+    body #projects
+    .block {
+        margin-bottom: 25px
+    }
+
+    body #projects .block
+    img {
+        width: 100%;
+        height: auto
+    }
+
+    body #projects .block.text
+    h2 {
+        padding: 35px
+    }
+
+    body #projects .block.text h2
+    p {
+        font-size: 20px
+    }
+
+    body #projects .block.project
+    h2 {
+        font-size: 16px
+    }
+
+    body #projects .block#block-intro {
+        height: 406px
+    }
+
+    body #logos
+    .logo {
+        height: 210px
+    }
+
+    body #about
+    .col3 {
+        width: 276px;
+        height: 330px;
+        overflow: hidden
+    }
+
+    body #about .col3
+    img {
+        height: 100%;
+        width: auto
+    }
+
+    body #about .col3.text .textHolder
+    h2 {
+        font-size: 16px
+    }
+
+    body #about .col3.text .textHolder
+    h3 {
+        font-size: 16px;
+        margin-bottom: 20px
+    }
+
+    body #about .col3.text .textHolder
+    p {
+        line-height: 20px
+    }
+
+    body #about
+    .col3.wide {
+        width: 589px
+    }
+
+    body #about
+    .col3.long {
+        height: 696px
+    }
+
+    body .showcase .branding
+    img {
+        margin-top: 50px
+    }
+
+    body #maison-de-bruges .branding
+    #branding1 {
+        margin-top: 50px
+    }
+
+    body #rodania .history .container
+    .cols {
+        margin-top: 40px
+    }
+
+    body #moreels .branding
+    div.col2 {
+        overflow: hidden;
+        height: 689px
+    }
+
+    body #joost-arijs .branding .cols
+    .col2 {
+        width: 430px;
+        height: auto;
+        margin-top: 40px
+    }
+
+    body #joost-arijs .branding .cols
+    .col1 {
+        margin-top: 40px
+    }
+
+    body #the-beach .imageHolder, body #wijngoed-rhode
+    .imageHolder {
+        height: 600px;
+        background-image: url("../../../images/content/work/the-beach/the-beach-intro.jpg");
+        background-position: center center;
+        background-size: cover
+    }
+
+    body #the-beach .imageHolder img, body #wijngoed-rhode .imageHolder
+    img {
+        display: none !important
+    }
+
+    body #the-beach .branding .col2, body #the-beach .branding img, body #wijngoed-rhode .branding .col2, body #wijngoed-rhode .branding
+    img {
+        margin-top: 40px !important
+    }
+
+    body #the-beach .branding .cols, body #wijngoed-rhode .branding
+    .cols {
+        padding-top: 30px
+    }
+
+    body #wijngoed-rhode #branding3, body #wijngoed-rhode
+    #branding4 {
+        max-width: 47.5%
+    }
+
+    #lanssens #branding-part-2
+    .container {
+        width: 100% !important;
+        padding: 10px 0px
+    }
+
+    body .news .newsFull
+    img {
+        max-width: 100%
+    }
+
+    body footer
+    span.abbacadabra {
+        font-size: 0;
+        color: #fff;
+        display: block;
+        height: 5px
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    #ntgent .fs-img.special {
+        margin: 0 auto !important;
+        position: static !important
+    }
+
+    .container {
+        width: 700px !important
+    }
+
+    .col3 {
+        width: 47.5% !important;
+        margin-left: 5% !important
+    }
+
+    .col3:nth-child(2n-1) {
+        margin-left: 0 !important
+    }
+
+    body
+    #projects {
+        overflow: hidden
+    }
+
+    body #projects
+    .block {
+        margin-bottom: 35px
+    }
+
+    body #projects
+    #lastCol {
+        margin-top: -45px;
+        position: relative;
+        margin-bottom: -930px
+    }
+
+    body #projects #lastCol
+    #vrijmoed {
+        right: -368px;
+        top: -1494px;
+        width: 334px
+    }
+
+    body #projects #lastCol
+    #rodania {
+        right: -368px;
+        top: -1499px;
+        height: 236px;
+        width: 334px;
+        overflow: hidden
+    }
+
+    body #about
+    div.col3 {
+        width: 332px !important;
+        margin: 0 0 36px 0 !important
+    }
+
+    body #about div.col3
+    img {
+        width: 100%;
+        height: auto
+    }
+
+    body #about div.col3:nth-child(2) {
+        float: right
+    }
+
+    body #about div.col3:nth-child(8) {
+        display: none
+    }
+
+    body #about div.col3:nth-child(7) {
+        width: 332px !important
+    }
+
+    body #about div.col3:nth-child(7) img {
+        height: 100%;
+        width: auto;
+        margin-left: -50%
+    }
+
+    body #about div.col3.text .textHolder
+    h2 {
+        font-size: 20px
+    }
+
+    body #about div.col3.text .textHolder
+    h3 {
+        font-size: 22px;
+        margin-bottom: 30px
+    }
+
+    body #about div.col3.text .textHolder
+    p {
+        line-height: 26px
+    }
+
+    body #contact
+    .col2 {
+        width: 100% !important;
+        margin: 0px !important
+    }
+
+    body .showcase .intro
+    .col2 {
+        width: 330px;
+        margin-left: 40px
+    }
+
+    body .showcase .intro .col2:nth-child(2n-1) {
+        margin-left: 0px
+    }
+
+    body .showcase .branding
+    .container {
+        padding-top: 60px
+    }
+
+    body .showcase .branding .container
+    .cols {
+        padding-top: 0px !important
+    }
+
+    body .showcase .branding .container
+    img {
+        margin-top: 40px !important
+    }
+
+    body .showcase .website
+    .webHolder {
+        margin-top: 90px
+    }
+
+    body .showcase .testimonial
+    h4 {
+        padding: 20px 0px;
+        font-size: 26px
+    }
+
+    body #maison-de-bruges .branding
+    #branding1 {
+        margin-top: 40px
+    }
+
+    body #moreels .branding
+    div.col2 {
+        overflow: hidden;
+        height: 537px
+    }
+
+    body #rodania .history .container
+    h2 {
+        font-size: 20px
+    }
+
+    body #vrijmoed .branding
+    img#branding2 {
+        margin: 100px auto !important;
+        width: 75%
+    }
+
+    body #vrijmoed
+    img.col3 {
+        width: 29.55% !important;
+        margin-left: 5.666% !important
+    }
+
+    body #vrijmoed img.col3:nth-child(3n-2) {
+        margin-left: 0 !important
+    }
+
+    body #maison-de-bruges .branding
+    .quote {
+        padding: 50px 0px
+    }
+
+    body #maison-de-bruges .branding .quote
+    h4 {
+        font-size: 22px;
+        line-height: 40px
+    }
+
+    body #maison-de-bruges .branding .col3, body #rodania .history
+    .col3 {
+        width: 31.3333% !important;
+        margin-left: 3% !important
+    }
+
+    body #maison-de-bruges .branding .col3:nth-child(3n-2), body #rodania .history .col3:nth-child(3n-2) {
+        margin-left: 0 !important
+    }
+
+    body #joost-arijs .branding .cols
+    .col2 {
+        width: 330px;
+        height: auto;
+        margin-top: 40px
+    }
+
+    body #joost-arijs .branding .cols
+    .col1 {
+        margin-top: 40px
+    }
+
+    body #the-beach
+    .imageHolder {
+        height: 500px
+    }
+
+    body #the-beach .branding
+    #branding2 {
+        font-size: 18px
+    }
+
+    body #the-beach .branding img, body #the-beach .branding .col2, body #wijngoed-rhode .branding img, body #wijngoed-rhode .branding
+    .col2 {
+        margin-top: 30px !important
+    }
+
+    body #wijngoed-rhode .branding
+    .container {
+        padding-bottom: 0px
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    .container {
+        width: 600px !important
+    }
+
+    .news
+    .main {
+        width: 100% !important
+    }
+
+    .news .main
+    .overview {
+        display: block
+    }
+
+    .news
+    .sidebar {
+        display: none !important
+    }
+
+    body
+    #projects {
+        overflow: hidden
+    }
+
+    body #projects
+    .block {
+        margin-bottom: 30px
+    }
+
+    body #projects .block#block-logos {
+        margin-top: 70px
+    }
+
+    body #projects
+    #lapomme {
+        height: 600px;
+        overflow: hidden
+    }
+
+    body #projects
+    #lastCol {
+        margin-top: -90px;
+        position: relative;
+        margin-bottom: -760px
+    }
+
+    body #projects #lastCol
+    #vrijmoed {
+        right: -315px;
+        top: -1340px;
+        width: 285px
+    }
+
+    body #projects #lastCol
+    #rodania {
+        right: -315px;
+        top: -1343px;
+        height: 196px;
+        width: 285px;
+        overflow: hidden
+    }
+
+    body #about
+    div.col3 {
+        width: 285px !important;
+        height: 360px !important
+    }
+
+    body #about div.col3
+    img {
+        height: 100%;
+        width: auto
+    }
+
+    body #about div.col3.text
+    .textHolder {
+        padding: 35px
+    }
+
+    body #about div.col3.text .textHolder
+    h3 {
+        font-size: 14px;
+        line-height: 10px;
+        margin-bottom: 15px
+    }
+
+    body #about div.col3.text .textHolder
+    h2 {
+        font-size: 17px !important
+    }
+
+    body #about
+    div.col3.long {
+        height: 756px !important
+    }
+
+    body #about
+    div.col3.wide {
+        width: 285px !important
+    }
+
+    body #about div.col3.wide
+    img {
+        margin-left: -60%
+    }
+
+    body .showcase .intro
+    .col2 {
+        width: 100%;
+        margin-left: 0px;
+        margin-bottom: 40px
+    }
+
+    body .showcase
+    nav.projectNav {
+        margin-top: 0px
+    }
+
+    body .showcase nav.projectNav a.prevProject, body .showcase nav.projectNav
+    a.nextProject {
+        width: 0px;
+        overflow: hidden;
+        padding: 0 0 0 50px
+    }
+
+    body .showcase nav.projectNav
+    a.overview {
+        margin-top: 6px
+    }
+
+    body .showcase .social
+    .container {
+        margin-top: 35px;
+        margin-bottom: -110px;
+        padding-top: 30px
+    }
+
+    body .showcase .branding .container
+    img {
+        margin-top: 30px !important
+    }
+
+    body #maison-de-bruges .branding
+    #branding1 {
+        margin-top: 30px
+    }
+
+    body #rodania .history .container
+    h2 {
+        font-size: 16px
+    }
+
+    body #moreels .branding
+    div.col2 {
+        overflow: hidden;
+        height: 456px
+    }
+
+    body #vrijmoed .branding
+    img {
+        margin-top: 30px !important
+    }
+
+    body #vrijmoed .branding
+    .imageHolder {
+        background-size: contain
+    }
+
+    body #joost-arijs .branding .cols
+    .col2 {
+        width: 285px
+    }
+
+    body #the-beach .branding
+    .col2 {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto;
+        margin-bottom: 0px !important;
+        margin-top: 40px
+    }
+
+    body #the-beach .branding
+    #branding2 {
+        font-size: 15px;
+        line-height: 35px
+    }
+
+    body #wijngoed-rhode .branding
+    #branding5 {
+        width: 75%
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    #ntgent .center-block {
+        margin: 30px 0 !important
+    }
+
+    #ntgent .fs-img.special {
+        margin: 40px 0 30px 0 !important
+    }
+
+    #ntgent .fs-img.large {
+        margin: 40px 0 30px 0 !important
+    }
+
+    #ntgent
+    h3.ntgent {
+        font-size: 30px !important;
+        margin-bottom: 30px !important
+    }
+
+    #ntgent
+    h5.special {
+        line-height: 36px;
+        margin-bottom: 30px !important
+    }
+
+    body {
+        border-right: 0;
+        border-left: 0
+    }
+
+    .container {
+        width: 400px !important
+    }
+
+    body header
+    a#burger {
+        display: block
+    }
+
+    body header
+    nav {
+        float: left;
+        width: 100%;
+        border-top: 4px solid #eee;
+        border-bottom: 4px solid #eee;
+        margin-top: 30px;
+        margin-bottom: -30px;
+        height: 100%;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all 0.5s ease-out;
+        position: relative
+    }
+
+    body header nav
+    a {
+        display: block;
+        margin: 0px;
+        padding: 20px 0px
+    }
+
+    body header nav a:before {
+        display: none
+    }
+
+    body header nav
+    .lang {
+        display: block;
+        margin: 20px 0;
+        padding: 0;
+        border-left: 0;
+        border-top: 4px solid #eee;
+        padding-top: 20px
+    }
+
+    body header nav .lang
+    span {
+        display: inline
+    }
+
+    body header
+    nav.show {
+        max-height: 400px;
+        opacity: 1
+    }
+
+    .col1, .col2, .col3 {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-bottom: 5% !important
+    }
+
+    body
+    #projects {
+        overflow: hidden
+    }
+
+    body #projects .block#block-logos {
+        margin-top: 0px !important
+    }
+
+    body #projects
+    .col3 {
+        margin-bottom: 0px !important
+    }
+
+    body #projects #block-intro {
+        height: 300px !important
+    }
+
+    body #projects #lapomme, body #projects
+    #sanseveria {
+        display: none
+    }
+
+    body #projects
+    #lastCol {
+        margin-top: 0px;
+        padding-bottom: 40px;
+        position: relative;
+        margin-bottom: auto
+    }
+
+    body #projects #lastCol
+    #vrijmoed {
+        right: auto;
+        top: auto;
+        width: auto
+    }
+
+    body #projects #lastCol
+    #rodania {
+        right: auto;
+        top: auto;
+        height: auto;
+        width: auto
+    }
+
+    body #logos .logo, body #websites
+    .website {
+        margin-bottom: 0 !important
+    }
+
+    body #about
+    div.col3 {
+        width: 100% !important;
+        height: 280px !important
+    }
+
+    body #about div.col3
+    img {
+        width: 100%;
+        height: auto
+    }
+
+    body #about
+    div.col3.wide {
+        width: 100% !important
+    }
+
+    body #about div.col3.wide
+    img {
+        margin: 0
+    }
+
+    body #about
+    div.col3.long {
+        height: 280px !important
+    }
+
+    body #about div.col3.long
+    img {
+        margin-top: -120%
+    }
+
+    body #about div.col3:nth-child(1) img {
+        margin-top: -25%
+    }
+
+    body #about div.col3:nth-child(5) img {
+        margin-top: -25%
+    }
+
+    body #about div.col3:nth-child(10) img {
+        margin-top: -25%
+    }
+
+    body #about div.col3:nth-child(8) {
+        display: block
+    }
+
+    body #about div.col3:nth-child(8) img {
+        margin-top: -25%
+    }
+
+    body .showcase .brandbox
+    .container {
+        padding-top: 30px
+    }
+
+    body .showcase .brandbox .container
+    h1 {
+        font-size: 24px
+    }
+
+    body .showcase .brandbox .container
+    h4 {
+        font-size: 15px;
+        line-height: 30px
+    }
+
+    body .showcase .brandbox .container
+    img {
+        margin-top: 25px
+    }
+
+    body .showcase .branding
+    .col2 {
+        margin-bottom: 0px !important
+    }
+
+    body .showcase .website
+    .container {
+        padding-top: 40px
+    }
+
+    body #maison-de-bruges .branding
+    #branding1 {
+        margin-top: 25px
+    }
+
+    body #the-beach .branding
+    #branding6 {
+        max-width: 100%
+    }
+
+    body #moreels .branding
+    div.col2 {
+        height: auto
+    }
+
+    body #moreels
+    img#branding5 {
+        margin-bottom: 30px !important
+    }
+
+    body #rodania .history
+    .container {
+        padding-top: 80px
+    }
+
+    body #rodania .history .container
+    h2 {
+        font-size: 14px
+    }
+
+    body #vrijmoed .branding
+    .imageHolder {
+        background-position: right top !important
+    }
+
+    body #vrijmoed .branding .imageHolder
+    .col2 {
+        width: 47.5% !important
+    }
+
+    body #maison-de-bruges .logo
+    img {
+        margin: 90px auto 100px
+    }
+
+    body #maison-de-bruges .branding .quote
+    h4 {
+        font-size: 20px;
+        line-height: 40px
+    }
+
+    body #maison-de-bruges .branding#branding-part-1 {
+        padding-bottom: 40px
+    }
+
+    body #maison-de-bruges .branding#branding-part-2
+    .container {
+        padding: 20px 0px
+    }
+
+    body #joost-arijs .branding .cols
+    .col2 {
+        width: 100%;
+        height: auto
+    }
+
+    body #joost-arijs .branding .cols .col2, body #joost-arijs .branding .cols
+    .col1 {
+        margin-top: 30px;
+        margin-bottom: 0 !important
+    }
+
+    body #wijngoed-rhode .branding
+    .col2 {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto;
+        margin-bottom: 0px !important;
+        margin-top: 40px
+    }
+
+    body #wijngoed-rhode
+    .website {
+        margin-top: -30px
+    }
+
+    body #luxhome .branding #branding3, body #luxhome .branding
+    #branding6 {
+        float: left !important;
+        display: inline-block !important
+    }
+
+    body #errorpage .branding
+    .col2 {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto;
+        margin-bottom: 0px !important;
+        margin-top: 30px
+    }
+
+    body footer
+    span.magic {
+        font-size: 0;
+        color: #fff;
+        display: block;
+        height: 5px
+    }
+
+    body footer
+    b {
+        display: none
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .container {
+        width: 280px !important
+    }
+
+    body .heading
+    h1 {
+        font-size: 16px !important;
+        line-height: 30px;
+        margin: -20px auto -5px !important
+    }
+
+    body .heading
+    h4 {
+        font-size: 14px
+    }
+
+    body .showcase .logo
+    img {
+        margin: 80px auto 70px !important
+    }
+
+    body .showcase
+    .testimonial {
+        padding: 0px 0px
+    }
+
+    body .showcase .testimonial
+    h4 {
+        font-size: 20px;
+        line-height: 35px;
+        padding: 0px 10px
+    }
+
+    body #joost-arijs .logo
+    img {
+        width: 50%
+    }
+
+    body #vrijmoed .logo
+    img {
+        width: 75%
+    }
+
+    body #vrijmoed .branding
+    img#branding2 {
+        margin: 50px auto !important
+    }
+
+    body #vrijmoed .branding .imageHolder
+    .col2 {
+        width: 45.5% !important
+    }
+
+    body #the-beach
+    .imageHolder {
+        margin-bottom: 30px;
+        height: 138px !important
+    }
+
+    body #the-beach .logo
+    img#logo2 {
+        margin-left: -140px !important;
+        margin-top: -95px !important
+    }
+
+    body #maison-de-bruges .branding
+    .quote {
+        padding: 25px 0px 40px
+    }
+
+    body #maison-de-bruges .branding .quote
+    h4 {
+        font-size: 14px;
+        line-height: 35px;
+        margin: 25px auto
+    }
+
+    body #maison-de-bruges .branding
+    .col3 {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-bottom: 0px !important
+    }
+
+    body .news
+    .newsItem {
+        margin-bottom: 50px !important
+    }
+
+    body .news .newsItem
+    .newsContent {
+        height: auto !important;
+        padding-bottom: 10px
+    }
+
+    body .news .newsFull
+    .newsHeader {
+        height: auto;
+        padding: 25px 0px
+    }
+
+    body .news .newsFull .newsHeader
+    h2 {
+        font-size: 22px;
+        margin-top: 0
+    }
+
+    body .news .newsFull .newsHeader
+    h5 {
+        font-size: 13px
+    }
+
+    body #about
+    div.col3 {
+        height: 345px !important
+    }
+
+    body #about div.col3
+    img {
+        height: 100%;
+        width: auto;
+        margin: 0 !important
+    }
+
+    body #about div.col3.long
+    img {
+        width: 100%;
+        height: auto;
+        margin-top: -110% !important
+    }
+
+    body #about div.col3:nth-child(7) img {
+        margin-left: -70% !important
+    }
+
+    body #about .col3.text .textHolder
+    h2 {
+        font-size: 16px
+    }
+
+    body #contact .input span, body #contact .textarea
+    span {
+        max-width: 100%
+    }
+
+    body #contact .input input, body #contact .input textarea, body #contact .textarea input, body #contact .textarea
+    textarea {
+        display: none;
+        width: 98%;
+        float: right;
+        text-indent: 0
+    }
+
+    body #contact .input.active span, body #contact .textarea.active
+    span {
+        display: none
+    }
+
+    body #contact .input.active input, body #contact .input.active textarea, body #contact .textarea.active input, body #contact .textarea.active
+    textarea {
+        display: block
+    }
+
+    body #contact
+    .textarea {
+        background-image: url("../../../images/layout/input-bg.png");
+        background-position: top left;
+        background-repeat: repeat
+    }
+
+    body #contact .textarea
+    textarea {
+        background-image: none;
+        background-color: transparent
+    }
+}
+
+html.touch .project h2, html.touch .newsThumb h2, html.touch
+.overlay {
+    display: none !important
+}
+
+html.touch .website:hover
+.normal {
+    top: 0px !important;
+    opacity: 1 !important
+}
+
+html.touch .website:hover
+.hover {
+    top: 100px !important;
+    opacity: 0 !important
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+    body .showcase .website .webHolder
+    .header {
+        background-image: url("../../../images/layout/web-left@2x.png");
+        background-size: cover
+    }
+
+    body .showcase .website .webHolder .header
+    i {
+        background-image: url("../../../images/layout/web-right@2x.png");
+        background-size: 100%
+    }
+}
+
+.contact-message {
+    position: absolute;
+}
+
+.contact-message li{
+    font-size: 18px;
+    list-style-type: none;
+    /*font-family: "华文楷体", "华文行楷", "微软雅黑", "华文琥珀", "楷体", "华文中宋", "华文新魏", "幼圆", "隶书";*/
+    color: #0a0a0a;
+}
+
+.contact-name {
+    font-size: 22px;
+    font-family: "华文楷体", "华文行楷", "微软雅黑", "华文琥珀", "楷体", "华文中宋", "华文新魏", "幼圆", "隶书";
+    color: #FFA908;
+}
+
+.contact-table-from {
+    /*border:1px solid #aab5bc;*/
+    width: 100%;
+    font-size: 25px;
+    font-family: cursive;
+    line-height: 50px;
+}
+
+.contact-table-from input{
+    border:1px solid;
+    width: 90%;
+    height: 35px;
+}
+
+.message-div {
+    float: left;
+}
+
+.product-list-li{
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+.product-list-li img{
+    float: left;
+}
+
+.product-list-li span{
+    float: left;
+    width: 78%;
+    padding-left: 15px;
+}

@@ -1,0 +1,117 @@
+body {
+    min-width: 1400px;
+}
+
+.query-list .edit {
+    width: 280px;
+    top: -46px;
+    left: 170px;
+}
+
+.query-list .edit li {
+    margin-left: 5px;
+}
+
+.query-list .edit li:last-child, .query-list .edit li:nth-child(5) {
+    padding: 6px;
+}
+
+.query-list .query > li input, select {
+    width: 100px;
+    height: 24px;
+    line-height: 24px;
+    color: #000;
+}
+
+.delTipDiv {
+    height: 50px;
+    text-align: center !important;
+}
+
+.delTip {
+    padding-left: 10px;
+}
+
+.modal-footer {
+    height: 50px;
+    text-align: center !important;
+}
+
+.modal-footer .btn:not(:first-child) {
+    margin-left: 70px;
+}
+
+.main {
+    margin-left: 0 !important;
+    float: left;
+}
+
+.time-box label {
+    float: left;
+    font-weight: normal;
+    position: relative;
+    top: 5px;
+}
+
+.time-box div {
+    float: left;
+}
+
+.time-box div input {
+    top: -3px !important;
+}
+
+#kwEnter {
+    width: 100%;
+    min-height: 100px;
+}
+
+.jqx-checkbox-default {
+    position: relative;
+    top: 8px;
+    left: 7px;
+}
+
+.topicSplit {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.topicSplit, .topicLevel1 {
+    display: none;
+}
+
+.impFile {
+    width: 480px;
+}
+
+a.downloadXlsModel {
+    color: red;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.caption li {
+    margin-top: 6px;
+    margin-left: 15px;
+}
+
+ul.importResultUL li {
+    list-style: decimal;
+}
+
+.cRed {
+    color: red;
+    margin-top: 6px;
+    margin-left: 15px;
+}
+
+.cBlack {
+    color: black !important;
+    margin-top: 6px;
+}
+
+.successTip {
+    margin-top: 6px;
+    margin-left: 15px;
+}

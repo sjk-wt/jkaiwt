@@ -1,0 +1,178 @@
+body{
+    background:transparent !important;
+}
+.query-list{
+    height: 37px;
+    line-height: 37px;
+}
+.query-list ul.edit{
+    height:100%;
+    width:20%;
+}
+.query-list ul li{
+    float: left;
+    height: 25px;
+    line-height:13px;
+    text-align: center;
+    margin-left: 5px;
+    color: #fff;
+}
+.query-list ul.edit li:hover{
+    background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#33CC33), to(#f6f6f8));
+    color:#000;
+}
+.form-control{
+    border-radius:7px;
+}
+.fa-exclamation-circle{
+    margin-top: 14px;
+    color: red;
+}
+.modal-dialog .btn{
+    outline:none;
+    border:0;
+    border-radius:6px;
+}
+.modal-body{
+    overflow: hidden;
+    padding:40px;
+}
+.modal-body .no-roled span{
+    position: absolute;
+    top: 10px;
+    left: 80px;
+    font-weight: bold;
+    font-size: 19px;
+}
+.modal-body .roled span{
+    position: absolute;
+    top: 10px;
+    right: 80px;
+    font-weight: bold;
+    font-size: 19px;
+}
+.modal-body>div{
+    float:left;
+}
+.modal-body .no-roled{
+    width: 43%;
+    padding-left: 20px;
+    padding-top: 20px;
+    border: 3px solid #339999;
+    margin-right: 10px;
+    box-sizing: border-box;
+    height:500px;
+    overflow: auto;
+}
+.modal-body .roled{
+    width:43%;
+    padding-left: 20px;
+    padding-top: 20px;
+    border: 3px solid #339999;
+    margin-left: 10px;
+    box-sizing: border-box;
+    height:500px;
+    overflow: auto;
+}
+.modal-body .control-role{
+    width:10%;
+    margin-top: 15%;
+    text-align:center;
+}
+#prompt{
+    text-align: center;
+    width: 400px;
+    height: 150px;
+    position: absolute;
+    top:7%;
+    right: 39%;
+    border: 2px solid #339999;
+    border-radius: 15px;
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 255, 255, .2)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent), to(transparent));
+    background-color: #33cc33;
+}
+#prompt b{
+    display: inline-block;
+    height: 75px;
+    line-height: 75px;
+    margin-left: 15px;
+    font-size: 27px;
+}
+#prompt p{
+    padding-left: 11px;
+    line-height: 33px;
+}
+input{
+    padding: 2px;
+    margin: 6px;
+    border-radius: 5px;
+    outline: none;
+    color:#000;
+    width:80px;
+}
+.controls{
+    border:1px solid #ddd;
+    box-shadow: inset 0px 3px 24px #fff;
+    color:#000;
+}
+.controls span{
+    margin:0px 10px;
+    color:#000;
+}
+.controls select{
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    outline: 0;
+    color:#000;
+}
+.fa-caret-left,.fa-caret-right{
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+}
+.controls a{
+    text-decoration: none;
+    color:#000;
+}
+.table-box{
+    width:99%;
+    margin:0 auto;
+    margin-bottom:100px;
+}
+#promptAdd{
+    width: 400px;
+    height: 150px;
+    position: absolute;
+    top: -170px;
+    right: 36%;
+    z-index: 10000;
+    border: 2px solid #339999;
+    border-radius: 15px;
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 255, 255, .2)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent), to(transparent));
+    background-color: #33cc33;
+    text-align: center;
+}
+#promptAdd b{
+    display: inline-block;
+    height: 75px;
+    line-height: 75px;
+    margin-left: 15px;
+    font-size: 27px;
+}
+#promptAdd p{
+    padding-left: 11px;
+    line-height: 33px;
+}
+#isBtnAdd{
+    position: absolute;
+    top: 109px;
+    left: 319px;
+    background:transparent;
+}
+.edit p{
+    display:none;
+}
+/*.btn-default{*/
+    /*background:#aaa;*/
+/*}*/

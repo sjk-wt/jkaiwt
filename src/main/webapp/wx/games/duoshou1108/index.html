@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=640,maximum-scale=1.5,user-scalable=no,target-densitydpi=device-dpi" />
+    <meta name="description" content="《诛仙云梦川》是完美世界自《诛仙手游》之后的全新篇章，延续了唯美的仙侠风格，讲述了兽神、玲珑两位主角的一段绝世仙恋。《诛仙云梦川》为玩家展开了“一川云梦，几世情缘”的凄美爱情故事，带领玩家穿越于玲珑的前世今生，开启一条前所未有的修仙问道之路。"/>
+    <meta name="keywords" content="诛仙手游,诛仙手游官网,云梦川,诛仙手游下载,青云志,碧瑶,陆雪琪,鬼厉,玲珑,兽神"/>
+    <meta name="apple-mobile-web-app-title" content="《诛仙手游》官方网站">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://zx.wanmei.com/web201603/mobile/images/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://zx.wanmei.com/web201603/mobile/images/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://zx.wanmei.com/web201603/mobile/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" href="http://zx.wanmei.com/web201603/mobile/images/apple-touch-icon-52x52.png">
+    <title>双十一疯狂剁手</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+<!-- 声音 -->
+<audio id="music" class="none" src="mp3/huoying.mp3" loop preload="preload"></audio>
+<audio id="music2" class="none" src="mp3/qieshou.mp3" loop preload="preload"></audio>
+
+<!-- 礼包弹窗 -->
+<div class="prompt"></div>
+<div class="libao">
+    <p>恭喜您成功剁掉<span class="down-count"></span>只手！</p>
+    <p>为了表彰您为家庭做出的贡献，送</p>
+    <p>您一份诛仙手游豪华大礼包！</p>
+    <a href="javascript:;" class="ling_btn"></a>
+    <a href="javascript:;" class="more"></a>
+    <a href="javascript:;" class="yao_btn"></a>
+</div>
+<!-- 兑换码弹窗 -->
+<div class="code_box">
+    <h2>兑换码</h2>
+    <div class="code">263807671231564789</div>
+    <a href="http://zx.wanmei.com/download/" class="down_btn"></a>
+    <a href="javascript:;" class="close"></a>
+</div>
+<!-- 分享弹窗 -->
+<div class="share"></div>
+    <!-- 倒计时 -->
+    <div class="countdown">
+        <h2>磨刀中</h2>
+        <div class="number"></div>
+        <div class="arrow"></div>
+        <div class="point"></div>
+        <div class="info">(手指疯狂向下滑动)</div>
+    </div>
+    <div class="loading_box">
+        <div class="text">又到一年剁手时</div>
+        <div class="loading_bar">
+            <div class="loading_bar_per">
+                <div class="loading_icon"></div>
+            </div>
+        </div>
+        <div class="loading"></div> 
+        <div class="ltext">loading……</div>
+    </div>
+    <div class="section01">
+        <div class="slogan"></div>
+        <a href="javascript:;" class="start_btn"></a>
+    </div>
+    <div class="section02">
+        <div class="time_box">
+            <div class="time">16.7</div>
+        </div>
+        <div class="data">
+            <div class="ci"></div>
+            <div class="jindu">
+                <div class="jindu_m">
+                    <div class="jindu_n"></div>
+                </div>
+            </div>
+            <div class="max"></div>
+            <div class="count_box">
+                <div class="count">0</div>
+            </div>
+        </div>
+        <div class="caiban">
+            <div class="gebo"></div>
+            <div class="dao"></div>
+            <div class="fanqie"></div>
+            <div class="lajiao"></div>
+        </div>
+        <div class="sheng"></div>
+    </div>
+    <script type="text/javascript" src="js/jq_183.js"></script>
+    <script type="text/javascript" src="http://www.wanmei.com/public/js/stat.js"></script>
+    <script type="text/javascript" src="js/resLoader.js"></script>
+    <script type="text/javascript" src="http://www.wanmei.com/public/js/weixin.js"></script>
+    <script type="text/javascript">
+        $('.section02').on('touchmove', function (event) {
+                event.preventDefault();
+        });
+        var music = document.getElementById('music');
+        var music2 = document.getElementById('music2');
+        var game={
+            timer:null,
+            count:0,
+            maxCount:200,
+            startX:0,
+            startY:0,
+            init:function(){
+                this.initEvent();
+            },
+            initCountDown:function(){//倒计时
+                var s = 20, t;
+                function times(){
+                    s=s-0.1;
+                    $(".time").html(s.toFixed(1));
+                    t = setTimeout(times, 100);
+                    if ( s <= 0 ){
+                        s = 20;
+                        $(".time").html(0);
+                        clearTimeout(t);
+                        // $(".section02").hide();
+                        $(".down-count").html($(".count").html());
+                        $(".libao").show();
+                        $(".prompt").show();
+                        music.pause();
+                        clearTimeout(game.timer);
+                    }
+                }
+                times();
+            },
+            initAnimate:function(){
+                var s = 4, t1;
+                function again(){
+                    $(".fanqie").addClass("on");
+                    $(".lajiao").addClass("on");
+                    t1=setTimeout(function(){
+                        $(".fanqie").removeClass("on");
+                        $(".lajiao").removeClass("on");
+                    },400);
+                }
+                function reAgain(){
+                    s=s-1;
+                    if ( s <= 0 ){
+                        clearTimeout(game.timer);
+                        clearTimeout(t1);
+                    }
+                    again();
+                    game.timer=setTimeout(reAgain,5000);
+
+                }
+                reAgain();
+            },
+            initEvent:function(){
+                //绑定事件
+                $(".section02")[0].addEventListener('touchstart',this.touchStart,false);
+                $(".section02")[0].addEventListener('touchmove',this.touchMove,false);
+                $(".section02")[0].addEventListener('touchend',this.touchEnd,false);
+                $(".more").on("click",function(){//再玩一次
+                    $(".libao").hide();
+                    $(".prompt").hide();
+                    game.start();
+                });
+                $(".code_box .close").on("click",function(){//关闭弹出框
+                    $(".code_box").hide();
+                    $(".prompt").hide();
+                    $(".section01").show();
+                });
+                $(".ling_btn").on("click",function(){//领取礼包
+                    $(".libao").hide();
+                    $(".code_box").show();
+                });
+                $(".yao_btn").on("click",function(){//邀请好友
+                    $(".libao").hide();
+                    $(".share").show();
+                })
+                $(".share").on("click",function(){
+                    $(".share").hide();
+                    $(".libao").show();
+                })
+            },
+            touchStart:function(evt){
+                try{
+                    var touch = evt.touches[0], //获取第一个触点
+                            x = Number(touch.pageX), //页面触点X坐标
+                            y = Number(touch.pageY); //页面触点Y坐标
+                    //记录触点初始位置
+                    this.startX = x;
+                    this.startY = y;
+                }catch(e){
+                    console.log(e.message)
+                }
+            },
+            touchMove:function(evt){
+                try{
+                    var touch = evt.touches[0], //获取第一个触点
+                            x = Number(touch.pageX), //页面触点X坐标
+                            y = Number(touch.pageY); //页面触点Y坐标
+                    //判断滑动方向
+                    if (y - this.startY>0) {
+                        if(!$(".gebo").hasClass("on")){
+                            $(".gebo").addClass("on");
+                            $(".dao").addClass("on");
+                            music2.load();
+                            music2.play();
+                            setTimeout(function(){
+                                $(".gebo").removeClass("on");
+                                $(".dao").removeClass("on");
+                            },400);
+                        }
+                    }
+                }catch(e){
+                    console.log(e.message)
+                }
+            },
+            touchEnd:function(evt){
+                try{
+                    var touch = evt.changedTouches[0], //获取第一个触点
+                            x = Number(touch.pageX), //页面触点X坐标
+                            y = Number(touch.pageY); //页面触点Y坐标
+                    //判断滑动方向
+                    if (y - this.startY>0) {
+                        game.count++;
+                        $(".jindu_m").width(game.count/game.maxCount*410);
+                        $(".count_box").css({"left":game.count/game.maxCount*410+37+"px"});
+                        $(".count").html(game.count);
+                        var div=$("<div class='add-one'></div>");
+                        div.appendTo($(".caiban")).fadeIn();
+                        div.css({
+                            "transition":"scale("+game.randomPos(0,10)*0.1+")",
+                            "top":game.randomPos(-50,94)+"px",
+                            "left":game.randomPos(252,435)+"px"
+                        });
+                        setTimeout(function(){
+                            div.remove();
+                        },500);
+                        if($(".jindu_m").width()>=410){
+                            $(".jindu_m").width(410);
+                            $(".count_box").css({"left":410+37+"px"});
+                            $(".count").html(game.maxCount);
+                        }
+                        music2.pause();
+                    }
+                }catch(e){
+                    console.log(e.message)
+                }
+            },
+            randomPos:function(Min,Max){//取随机数
+                    var Range = Max - Min;
+                    var Rand = Math.random();
+                    return(Min + Math.round(Rand * Range));
+            },
+            start:function(){//游戏开始
+                music.play();
+                $(".countdown").show();
+                $(".number").addClass("on");
+                setTimeout(function(){
+                    $(".countdown").fadeOut(function(){
+                        game.initCountDown();//倒计时
+                        game.initAnimate();
+                        $(".count_box").css({"left":"37px"});
+                        $(".count").html(0);
+                        game.count=0;
+                        $(".jindu_m").width(0);
+                    });
+                    $(".section02").show();
+                    $(".number").removeClass("on");
+                },3000);
+            }
+        };
+        $(function(){
+            //加载页面 
+            var loader = new resLoader({
+                resources : [
+                'img/loading_bg.jpg' 
+                ],
+                onStart : function(total){
+                // console.log('start:'+total);
+                },
+                onProgress : function(current, total){
+                // console.log(current+'/'+total);
+                var percent = current/total*100;
+                // $('.loading_icon').css('width', percent+'%');
+
+                },
+                onComplete : function(total){console.log(total)
+                // alert('加载完毕:'+total+'个资源');
+                    $('.loading_bar_per').animate({"width":"230px"},3000)
+            
+
+                }
+            });      
+            loader.start(); 
+            setTimeout(function(){
+                $(".loading_box").fadeOut();
+                setTimeout(function(){
+                    $(".section01").fadeIn();    
+                },500);        
+            },3000);
+            
+            $(".start_btn").on("click",function(){
+                music.play();
+                $(".section01").hide();
+                game.start();
+            });
+            game.init();
+        })
+        wx.ready(function(){
+            wx.onMenuShareAppMessage({
+                title: '一刀下去，他断了老婆的幸福',
+                desc: '我出差提前回家想给老婆一个惊喜，没想到一进门却发现...',
+                link: window.location.href,
+                imgUrl: 'http://zx.wanmei.com/hd/1710/duoshou/img/share_icon.jpg',
+                trigger: function (res) {
+                    // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
+                    //alert('用户点击发送给朋友');
+                },
+                success: function (res) {
+                    //window.location.href = "http://t.cn/RZmX3L7" ;
+                    $(".share").hide();
+                    $(".prompt").hide();
+                    $(".section01").show();
+                },
+                cancel: function (res) {
+                    //alert('已取消');
+                },
+                fail: function (res) {
+                    //alert(JSON.stringify(res));
+                }
+            });
+
+            wx.onMenuShareTimeline({
+                title: '一刀下去，他断了老婆的幸福',
+                desc: '我出差提前回家想给老婆一个惊喜，没想到一进门却发现...',
+                link: window.location.href,
+                imgUrl: 'http://zx.wanmei.com/hd/1710/duoshou/img/share_icon.jpg',
+                trigger: function (res) {
+                    // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
+                    //alert('用户点击分享到朋友圈');
+                },
+                success: function (res) {
+                    //window.location.href = "http://t.cn/RZmX3L7" ;
+                    $(".share").hide();
+                    $(".prompt").hide();
+                    $(".section01").show();
+                },
+                cancel: function (res) {
+                    //alert('已取消');
+                },
+                fail: function (res) {
+                    //alert(JSON.stringify(res));
+                }
+            });
+        });
+    </script>
+</body>
+</html>
