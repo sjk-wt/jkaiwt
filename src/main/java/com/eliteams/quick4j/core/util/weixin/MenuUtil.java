@@ -140,6 +140,11 @@ public class MenuUtil {
         gameMore.setKey("GAMEmORE_KEY");
         gameMore.setType("click");
 
+        ViewButton square = new ViewButton();
+        square.setName("方块跳跃");
+        square.setType("view");
+        square.setUrl(PropertiesUtil.getProperty("object_root_name") + "wx/games/Square/index.html");
+
         ViewButton arixTetris = new ViewButton();
         arixTetris.setName("剁手么");
         arixTetris.setType("view");
@@ -157,7 +162,7 @@ public class MenuUtil {
 
         ComplexButton complexButton1 = new ComplexButton();
         complexButton1.setName("休闲娱乐");
-        complexButton1.setSub_button(new BaseButton[]{gameMore, arixTetris, flappyFrog, game2048});
+        complexButton1.setSub_button(new BaseButton[]{gameMore, square, arixTetris, flappyFrog, game2048});
 
         Menu menu = new Menu();
         menu.setButton(new BaseButton[]{clickButton, complexButton, complexButton1});
