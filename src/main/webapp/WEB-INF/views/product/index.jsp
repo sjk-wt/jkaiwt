@@ -33,7 +33,7 @@
                 read more
             </h2>
 
-            <img src="${pageContext.request.contextPath}/imgs/fengmian/yyxhtzfm.jpg">
+            <img src="${pageContext.request.contextPath}/tao/imgs/fengmian/yyxhtzfm.jpg">
 
         </div>
         <div class="newsContent">

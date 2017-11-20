@@ -19,6 +19,12 @@ public class CommonUtil {
 
     private static final String token_url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET";
 
+    public static void main(String[] args) {
+        String url = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=QvCstvNQM5lWlwo7Jn9N-ifI5QHS9qSTxkPd1oIhhFaEFCDj4Dj8mkZ1e0efHJxy5XdT_CSecIl7q7T_mumM6n51WNzZ6LCuaaXreseB6IIWCMeABAHNX&openid=oTHSZ0afdiK3Plg969kyb39JuBGk&lang=zh_CN";
+        String result = httpsRequest(url, "GET", null);
+        System.out.println(result);
+    }
+
     /**
      * 处理https GET/POST请求
      * @param requestUrl 请求地址

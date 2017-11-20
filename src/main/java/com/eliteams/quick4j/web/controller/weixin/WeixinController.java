@@ -116,17 +116,15 @@ public class WeixinController {
             if (msgType.equals(MessageUtil.REQ_MESSAGE_TYOE_TEXT)) {
                 logger.info("【POST请求】您发送的是文本信息");
                 String content = resMap.get("Content");
-                if (content.equals("签到")) {
-                    isSigned(fromUserName, textMessage);
-                    respXML = MessageUtil.messageToXML(textMessage);
-                } else if (content.equals("歌曲")) {
-                    MusicMessage musicMessage = formatMusic(resMap);
-                    respXML = MessageUtil.messageToXML(musicMessage);
-                } else if (content.equals("游戏")) {
-                    textMessage.setContent("点击可以开始<a href=\""+ PropertiesUtil.getProperty("object_root_name")+"wx/games/2048Game/index.html\">2048</a>游戏");
-                    respXML = MessageUtil.messageToXML(textMessage);
-                } else if (content.equals("1")) {
-                    textMessage.setContent("<a href=\""+ PropertiesUtil.getProperty("object_root_name")+"wx/html/index.html\">点击进入BMI计算器</a>");
+                if (content.equals("？") || content.equals("?")) {
+                    StringBuffer sb = new StringBuffer();
+                    sb.append("输入：城市+").append("\"天气\"，例如：北京天气\n");
+                    sb.append("          ").append("\"天气\"+城市，例如：天气北京\n");
+                    sb.append("即可查询城市天气预报！\n\n");
+                    sb.append("回复 \"?\" 显示提示信息！");
+                    sb.append("\n\n功能正在完善中,敬请期待....");
+                    sb.append("\nPS：在休闲娱乐中可以先玩玩游戏！");
+                    textMessage.setContent(sb.toString());
                     respXML = MessageUtil.messageToXML(textMessage);
                 } else if (content.endsWith("天气") || content.startsWith("天气")) {
                     String crty = content.replace("天气", "").trim();
@@ -189,12 +187,28 @@ public class WeixinController {
                         weixinUser.setSubscribeTime(new Date());
                         weixinUser.setSubscribeStatus(WeixinUser.GUANZHU);
                         weixinUserService.insertSelective(weixinUser);
-                        textMessage.setContent("关注成功！");
+                        StringBuffer sb = new StringBuffer();
+                        sb.append("感谢您的关注，小石竭诚为您服务！").append("\n\n");
+                        sb.append("输入：城市+").append("\"天气\"，例如：北京天气\n");
+                        sb.append("          ").append("\"天气\"+城市，例如：天气北京\n");
+                        sb.append("即可查询城市天气预报\n\n");
+                        sb.append("回复 \"?\" 显示提示信息！");
+                        sb.append("\n\n功能正在完善中,敬请期待....");
+                        sb.append("\nPS：在休闲娱乐中可以先玩玩游戏！");
+                        textMessage.setContent(sb.toString());
                         respXML = MessageUtil.messageToXML(textMessage);
                     } else {
                         weixinUser.setSubscribeStatus(WeixinUser.GUANZHU);
                         weixinUserService.updateByPrimaryKeySelective(weixinUser);
-                        textMessage.setContent("感谢您的再次关注！");
+                        StringBuffer sb = new StringBuffer();
+                        sb.append("感谢您的再次关注，小石竭诚为您服务！").append("\n\n");
+                        sb.append("输入：城市+").append("\"天气\"，例如：北京天气\n");
+                        sb.append("          ").append("\"天气\"+城市，例如：天气北京\n");
+                        sb.append("即可查询城市天气预报\n\n");
+                        sb.append("回复 \"?\" 显示提示信息！");
+                        sb.append("\n\n功能正在完善中,敬请期待....");
+                        sb.append("\nPS：在休闲娱乐中可以先玩玩游戏！");
+                        textMessage.setContent(sb.toString());
                         respXML = MessageUtil.messageToXML(textMessage);
                     }
                 }
