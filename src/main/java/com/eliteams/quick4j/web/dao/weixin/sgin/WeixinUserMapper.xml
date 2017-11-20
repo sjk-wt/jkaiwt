@@ -7,6 +7,17 @@
     <result column="subscribe_time" property="subscribeTime" jdbcType="TIMESTAMP" />
     <result column="subscribe_status" property="subscribeStatus" jdbcType="INTEGER" />
     <result column="points" property="points" jdbcType="INTEGER" />
+    <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="INTEGER" />
+    <result column="language" property="language" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="VARCHAR" />
+    <result column="country" property="country" jdbcType="VARCHAR" />
+    <result column="headimgurl" property="headimgurl" jdbcType="VARCHAR" />
+    <result column="unionid" property="unionid" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="groupid" property="groupid" jdbcType="INTEGER" />
+    <result column="tagid_list" property="tagidList" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -67,7 +78,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, open_id, subscribe_time, subscribe_status, points
+    id, open_id, subscribe_time, subscribe_status, points, nickname, sex, language, city, 
+    province, country, headimgurl, unionid, remark, groupid, tagid_list
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.eliteams.quick4j.web.model.weixin.sgin.WeixinUserExample" >
     select
@@ -101,9 +113,17 @@
   </delete>
   <insert id="insert" parameterType="com.eliteams.quick4j.web.model.weixin.sgin.WeixinUser" >
     insert into weixin_user (id, open_id, subscribe_time, 
-      subscribe_status, points)
+      subscribe_status, points, nickname, 
+      sex, language, city, 
+      province, country, headimgurl, 
+      unionid, remark, groupid, 
+      tagid_list)
     values (#{id,jdbcType=VARCHAR}, #{openId,jdbcType=VARCHAR}, #{subscribeTime,jdbcType=TIMESTAMP}, 
-      #{subscribeStatus,jdbcType=INTEGER}, #{points,jdbcType=INTEGER})
+      #{subscribeStatus,jdbcType=INTEGER}, #{points,jdbcType=INTEGER}, #{nickname,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=INTEGER}, #{language,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
+      #{province,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR}, #{headimgurl,jdbcType=VARCHAR}, 
+      #{unionid,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{groupid,jdbcType=INTEGER}, 
+      #{tagidList,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.eliteams.quick4j.web.model.weixin.sgin.WeixinUser" >
     insert into weixin_user
@@ -123,6 +143,39 @@
       <if test="points != null" >
         points,
       </if>
+      <if test="nickname != null" >
+        nickname,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="language != null" >
+        language,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+      <if test="province != null" >
+        province,
+      </if>
+      <if test="country != null" >
+        country,
+      </if>
+      <if test="headimgurl != null" >
+        headimgurl,
+      </if>
+      <if test="unionid != null" >
+        unionid,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="groupid != null" >
+        groupid,
+      </if>
+      <if test="tagidList != null" >
+        tagid_list,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -139,6 +192,39 @@
       </if>
       <if test="points != null" >
         #{points,jdbcType=INTEGER},
+      </if>
+      <if test="nickname != null" >
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="language != null" >
+        #{language,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null" >
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="headimgurl != null" >
+        #{headimgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="unionid != null" >
+        #{unionid,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="groupid != null" >
+        #{groupid,jdbcType=INTEGER},
+      </if>
+      <if test="tagidList != null" >
+        #{tagidList,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -166,6 +252,39 @@
       <if test="record.points != null" >
         points = #{record.points,jdbcType=INTEGER},
       </if>
+      <if test="record.nickname != null" >
+        nickname = #{record.nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sex != null" >
+        sex = #{record.sex,jdbcType=INTEGER},
+      </if>
+      <if test="record.language != null" >
+        language = #{record.language,jdbcType=VARCHAR},
+      </if>
+      <if test="record.city != null" >
+        city = #{record.city,jdbcType=VARCHAR},
+      </if>
+      <if test="record.province != null" >
+        province = #{record.province,jdbcType=VARCHAR},
+      </if>
+      <if test="record.country != null" >
+        country = #{record.country,jdbcType=VARCHAR},
+      </if>
+      <if test="record.headimgurl != null" >
+        headimgurl = #{record.headimgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.unionid != null" >
+        unionid = #{record.unionid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null" >
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.groupid != null" >
+        groupid = #{record.groupid,jdbcType=INTEGER},
+      </if>
+      <if test="record.tagidList != null" >
+        tagid_list = #{record.tagidList,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -177,7 +296,18 @@
       open_id = #{record.openId,jdbcType=VARCHAR},
       subscribe_time = #{record.subscribeTime,jdbcType=TIMESTAMP},
       subscribe_status = #{record.subscribeStatus,jdbcType=INTEGER},
-      points = #{record.points,jdbcType=INTEGER}
+      points = #{record.points,jdbcType=INTEGER},
+      nickname = #{record.nickname,jdbcType=VARCHAR},
+      sex = #{record.sex,jdbcType=INTEGER},
+      language = #{record.language,jdbcType=VARCHAR},
+      city = #{record.city,jdbcType=VARCHAR},
+      province = #{record.province,jdbcType=VARCHAR},
+      country = #{record.country,jdbcType=VARCHAR},
+      headimgurl = #{record.headimgurl,jdbcType=VARCHAR},
+      unionid = #{record.unionid,jdbcType=VARCHAR},
+      remark = #{record.remark,jdbcType=VARCHAR},
+      groupid = #{record.groupid,jdbcType=INTEGER},
+      tagid_list = #{record.tagidList,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -197,6 +327,39 @@
       <if test="points != null" >
         points = #{points,jdbcType=INTEGER},
       </if>
+      <if test="nickname != null" >
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="language != null" >
+        language = #{language,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null" >
+        country = #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="headimgurl != null" >
+        headimgurl = #{headimgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="unionid != null" >
+        unionid = #{unionid,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="groupid != null" >
+        groupid = #{groupid,jdbcType=INTEGER},
+      </if>
+      <if test="tagidList != null" >
+        tagid_list = #{tagidList,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
@@ -205,7 +368,18 @@
     set open_id = #{openId,jdbcType=VARCHAR},
       subscribe_time = #{subscribeTime,jdbcType=TIMESTAMP},
       subscribe_status = #{subscribeStatus,jdbcType=INTEGER},
-      points = #{points,jdbcType=INTEGER}
+      points = #{points,jdbcType=INTEGER},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=INTEGER},
+      language = #{language,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
+      country = #{country,jdbcType=VARCHAR},
+      headimgurl = #{headimgurl,jdbcType=VARCHAR},
+      unionid = #{unionid,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      groupid = #{groupid,jdbcType=INTEGER},
+      tagid_list = #{tagidList,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
 </mapper>

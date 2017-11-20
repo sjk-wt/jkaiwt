@@ -3,6 +3,7 @@ package com.eliteams.quick4j.web.controller.weixin;
 import com.eliteams.quick4j.core.util.PropertiesUtil;
 import com.eliteams.quick4j.core.util.weixin.MessageUtil;
 import com.eliteams.quick4j.core.util.weixin.SignalUtil;
+import com.eliteams.quick4j.core.util.weixin.UserMessageUtil;
 import com.eliteams.quick4j.core.util.weixin.WeatherUtil;
 import com.eliteams.quick4j.core.weixinAes.WXBizMsgCrypt;
 import com.eliteams.quick4j.web.model.weixin.message.*;
@@ -11,6 +12,7 @@ import com.eliteams.quick4j.web.model.weixin.sgin.WeixinUser;
 import com.eliteams.quick4j.web.model.weixin.sgin.WeixinUserExample;
 import com.eliteams.quick4j.web.service.weixin.sgin.WeixinSignService;
 import com.eliteams.quick4j.web.service.weixin.sgin.WeixinUserService;
+import com.eliteams.quick4j.web.service.weixin.weather.WxCrtyService;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,8 +23,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -39,6 +39,9 @@ public class WeixinController {
 
     @Resource
     private WeixinSignService weixinSignService;
+
+    @Resource
+    private WxCrtyService wxCrtyService;
 
     @RequestMapping(value = "/weixin", method = RequestMethod.GET)
     public void doGetMessage(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -128,15 +131,20 @@ public class WeixinController {
                     respXML = MessageUtil.messageToXML(textMessage);
                 } else if (content.endsWith("天气") || content.startsWith("天气")) {
                     String crty = content.replace("天气", "").trim();
-                    List<Article> articles = WeatherUtil.BaiDuWeather(crty);
-                    NewsMessage newsMessage = new NewsMessage();
-                    newsMessage.setFromUserName(toUserName);
-                    newsMessage.setToUserName(fromUserName);
-                    newsMessage.setMsgType(MessageUtil.RESP_MESSAGE_TYOE_NEWS);
-                    newsMessage.setCreateTime(new Date().getTime());
-                    newsMessage.setArticleCount(articles.size());
-                    newsMessage.setArticles(articles);
-                    respXML = MessageUtil.messageToXML(newsMessage);
+                    List<Article> articles = WeatherUtil.BaiDuWeather(crty, wxCrtyService);
+                    if (articles.size() > 0) {
+                        NewsMessage newsMessage = new NewsMessage();
+                        newsMessage.setFromUserName(toUserName);
+                        newsMessage.setToUserName(fromUserName);
+                        newsMessage.setMsgType(MessageUtil.RESP_MESSAGE_TYOE_NEWS);
+                        newsMessage.setCreateTime(new Date().getTime());
+                        newsMessage.setArticleCount(articles.size());
+                        newsMessage.setArticles(articles);
+                        respXML = MessageUtil.messageToXML(newsMessage);
+                    } else {
+                        textMessage.setContent("请输入中国的城市！");
+                        respXML = MessageUtil.messageToXML(textMessage);
+                    }
                 } else {
                     textMessage.setContent("请输入的是文本信息，内容是【"+content+"】");
                     respXML = MessageUtil.messageToXML(textMessage);
@@ -183,9 +191,8 @@ public class WeixinController {
                     if (weixinUser == null) {
                         weixinUser = new WeixinUser();
                         weixinUser.setId(UUID.randomUUID().toString());
-                        weixinUser.setOpenId(fromUserName);
-                        weixinUser.setSubscribeTime(new Date());
                         weixinUser.setSubscribeStatus(WeixinUser.GUANZHU);
+                        UserMessageUtil.getUserMessage(fromUserName, weixinUser);
                         weixinUserService.insertSelective(weixinUser);
                         StringBuffer sb = new StringBuffer();
                         sb.append("感谢您的关注，小石竭诚为您服务！").append("\n\n");
@@ -199,6 +206,7 @@ public class WeixinController {
                         respXML = MessageUtil.messageToXML(textMessage);
                     } else {
                         weixinUser.setSubscribeStatus(WeixinUser.GUANZHU);
+                        UserMessageUtil.getUserMessage(fromUserName, weixinUser);
                         weixinUserService.updateByPrimaryKeySelective(weixinUser);
                         StringBuffer sb = new StringBuffer();
                         sb.append("感谢您的再次关注，小石竭诚为您服务！").append("\n\n");
@@ -234,16 +242,22 @@ public class WeixinController {
                     }
                     //天气预报
                     else if ("WEATHER_KEY".equals(eventKey)) {
-                        String crty = "北京";
-                        List<Article> articles = WeatherUtil.BaiDuWeather(crty);
-                        NewsMessage newsMessage = new NewsMessage();
-                        newsMessage.setFromUserName(toUserName);
-                        newsMessage.setToUserName(fromUserName);
-                        newsMessage.setMsgType(MessageUtil.RESP_MESSAGE_TYOE_NEWS);
-                        newsMessage.setCreateTime(new Date().getTime());
-                        newsMessage.setArticleCount(articles.size());
-                        newsMessage.setArticles(articles);
-                        respXML = MessageUtil.messageToXML(newsMessage);
+                        WeixinUser user = getUserByOpendId(fromUserName);
+                        String crty = user.getCity();
+                        List<Article> articles = WeatherUtil.BaiDuWeather(crty, wxCrtyService);
+                        if (articles.size() > 0) {
+                            NewsMessage newsMessage = new NewsMessage();
+                            newsMessage.setFromUserName(toUserName);
+                            newsMessage.setToUserName(fromUserName);
+                            newsMessage.setMsgType(MessageUtil.RESP_MESSAGE_TYOE_NEWS);
+                            newsMessage.setCreateTime(new Date().getTime());
+                            newsMessage.setArticleCount(articles.size());
+                            newsMessage.setArticles(articles);
+                            respXML = MessageUtil.messageToXML(newsMessage);
+                        } else {
+                            textMessage.setContent("请输入中国的城市！");
+                            respXML = MessageUtil.messageToXML(textMessage);
+                        }
                     } else {
                         textMessage.setContent("跳转按钮");
                         respXML = MessageUtil.messageToXML(textMessage);

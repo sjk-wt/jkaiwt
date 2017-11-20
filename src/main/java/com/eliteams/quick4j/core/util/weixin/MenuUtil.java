@@ -1,6 +1,7 @@
 package com.eliteams.quick4j.core.util.weixin;
 
 import com.eliteams.quick4j.core.util.PropertiesUtil;
+import com.eliteams.quick4j.web.controller.timedtasks.TimedTasks;
 import com.eliteams.quick4j.web.model.weixin.muen.*;
 import com.eliteams.quick4j.web.model.weixin.pojo.Token;
 import net.sf.json.JSONObject;
@@ -99,9 +100,7 @@ public class MenuUtil {
 
         String menuStr = JSONObject.fromObject(menu).toString();
 
-        Token token = CommonUtil.getAccessToken(PropertiesUtil.getProperty("wx_appID"), PropertiesUtil.getProperty("wx_encodingAesKey"));
-
-        System.out.println(createMenu(menuStr, token.getAccess_token()));
+        System.out.println(createMenu(menuStr, TimedTasks.ACCESS_TOKEN));
 
     }
 

@@ -17,7 +17,7 @@ import java.net.URL;
  */
 public class CommonUtil {
 
-    private static final String token_url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET";
+
 
     public static void main(String[] args) {
         String url = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=QvCstvNQM5lWlwo7Jn9N-ifI5QHS9qSTxkPd1oIhhFaEFCDj4Dj8mkZ1e0efHJxy5XdT_CSecIl7q7T_mumM6n51WNzZ6LCuaaXreseB6IIWCMeABAHNX&openid=oTHSZ0afdiK3Plg969kyb39JuBGk&lang=zh_CN";
@@ -119,30 +119,6 @@ public class CommonUtil {
             e.printStackTrace();
         }
         return buffer.toString();
-    }
-
-    /**
-     * 获取access_token 值
-     * @param appid 公众号的唯一凭证
-     * @param appsecret 秘钥
-     * @return
-     */
-    public static Token getAccessToken(String appid, String appsecret) {
-        Token token = null;
-
-        String tokenUrl = token_url.replace("APPID", appid).replace("APPSECRET", appsecret);
-
-        String jsonString = CommonUtil.httpRequest(tokenUrl, "GET", null);
-
-        ObjectMapper mapper = new ObjectMapper();
-
-        try {
-            token = mapper.readValue(jsonString, Token.class);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return token;
     }
 
     /**

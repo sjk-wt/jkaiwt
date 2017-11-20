@@ -1,6 +1,7 @@
 package com.eliteams.quick4j.core.util.weixin;
 
 import com.eliteams.quick4j.core.util.PropertiesUtil;
+import com.eliteams.quick4j.web.controller.timedtasks.TimedTasks;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -18,7 +19,7 @@ public class SignalUtil {
         boolean result = false;
 
         // 对token、timestamp和nonce按字典排序
-        String[] array= new String[] { PropertiesUtil.getProperty("wx_token"), timestamp, nonce };
+        String[] array= new String[] {TimedTasks.WX_TOKEN, timestamp, nonce };
         Arrays.sort(array);
 
         // 将三个参数字符串拼接成一个字符串
