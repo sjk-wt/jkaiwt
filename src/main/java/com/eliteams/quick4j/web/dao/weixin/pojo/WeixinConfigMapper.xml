@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.eliteams.quick4j.web.dao.weixin.pojo.WeixinConfigMapper" >
+  <resultMap id="BaseResultMap" type="com.eliteams.quick4j.web.model.weixin.pojo.WeixinConfig" >
+    <id column="wx_token" property="wxToken" jdbcType="VARCHAR" />
+    <result column="wx_appID" property="wxAppid" jdbcType="VARCHAR" />
+    <result column="wx_encodingAesKey" property="wxEncodingaeskey" jdbcType="VARCHAR" />
+    <result column="wx_access_token" property="wxAccessToken" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    wx_token, wx_appID, wx_encodingAesKey, wx_access_token
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.eliteams.quick4j.web.model.weixin.pojo.WeixinConfigExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from weixin_config
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from weixin_config
+    where wx_token = #{wxToken,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from weixin_config
+    where wx_token = #{wxToken,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.eliteams.quick4j.web.model.weixin.pojo.WeixinConfigExample" >
+    delete from weixin_config
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.eliteams.quick4j.web.model.weixin.pojo.WeixinConfig" >
+    insert into weixin_config (wx_token, wx_appID, wx_encodingAesKey, 
+      wx_access_token)
+    values (#{wxToken,jdbcType=VARCHAR}, #{wxAppid,jdbcType=VARCHAR}, #{wxEncodingaeskey,jdbcType=VARCHAR}, 
+      #{wxAccessToken,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.eliteams.quick4j.web.model.weixin.pojo.WeixinConfig" >
+    insert into weixin_config
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="wxToken != null" >
+        wx_token,
+      </if>
+      <if test="wxAppid != null" >
+        wx_appID,
+      </if>
+      <if test="wxEncodingaeskey != null" >
+        wx_encodingAesKey,
+      </if>
+      <if test="wxAccessToken != null" >
+        wx_access_token,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="wxToken != null" >
+        #{wxToken,jdbcType=VARCHAR},
+      </if>
+      <if test="wxAppid != null" >
+        #{wxAppid,jdbcType=VARCHAR},
+      </if>
+      <if test="wxEncodingaeskey != null" >
+        #{wxEncodingaeskey,jdbcType=VARCHAR},
+      </if>
+      <if test="wxAccessToken != null" >
+        #{wxAccessToken,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.eliteams.quick4j.web.model.weixin.pojo.WeixinConfigExample" resultType="java.lang.Integer" >
+    select count(*) from weixin_config
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update weixin_config
+    <set >
+      <if test="record.wxToken != null" >
+        wx_token = #{record.wxToken,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wxAppid != null" >
+        wx_appID = #{record.wxAppid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wxEncodingaeskey != null" >
+        wx_encodingAesKey = #{record.wxEncodingaeskey,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wxAccessToken != null" >
+        wx_access_token = #{record.wxAccessToken,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update weixin_config
+    set wx_token = #{record.wxToken,jdbcType=VARCHAR},
+      wx_appID = #{record.wxAppid,jdbcType=VARCHAR},
+      wx_encodingAesKey = #{record.wxEncodingaeskey,jdbcType=VARCHAR},
+      wx_access_token = #{record.wxAccessToken,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.eliteams.quick4j.web.model.weixin.pojo.WeixinConfig" >
+    update weixin_config
+    <set >
+      <if test="wxAppid != null" >
+        wx_appID = #{wxAppid,jdbcType=VARCHAR},
+      </if>
+      <if test="wxEncodingaeskey != null" >
+        wx_encodingAesKey = #{wxEncodingaeskey,jdbcType=VARCHAR},
+      </if>
+      <if test="wxAccessToken != null" >
+        wx_access_token = #{wxAccessToken,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where wx_token = #{wxToken,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.eliteams.quick4j.web.model.weixin.pojo.WeixinConfig" >
+    update weixin_config
+    set wx_appID = #{wxAppid,jdbcType=VARCHAR},
+      wx_encodingAesKey = #{wxEncodingaeskey,jdbcType=VARCHAR},
+      wx_access_token = #{wxAccessToken,jdbcType=VARCHAR}
+    where wx_token = #{wxToken,jdbcType=VARCHAR}
+  </update>
+</mapper>
