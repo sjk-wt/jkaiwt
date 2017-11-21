@@ -1,6 +1,5 @@
 package com.eliteams.quick4j.core.util.weixin;
 
-import com.eliteams.quick4j.web.controller.timedtasks.CrtyWeatDateTask;
 import com.eliteams.quick4j.web.controller.timedtasks.WxAccessTokenTask;
 import com.eliteams.quick4j.web.model.weixin.pojo.Token;
 import com.eliteams.quick4j.web.model.weixin.sgin.WeixinUser;
@@ -30,7 +29,7 @@ public class UserMessageUtil {
         user.setOpenId(openid);
         user.setSubscribeTime(new Date());
         user.setCity((String) jsonObject.get("city"));
-        user.setNickname((String) jsonObject.get("nickname"));
+        user.setNickname(CommonUtil.getURLEncoderString((String) jsonObject.get("nickname")));
         user.setSex((Integer) jsonObject.get("sex"));
         user.setLanguage((String) jsonObject.get("language"));
         user.setProvince((String) jsonObject.get("province"));
@@ -66,15 +65,13 @@ public class UserMessageUtil {
 
     public static void main(String[] args) {
 
-//        Token token = getAccessToken("wxb6646a6c65188411", "9ff843ad69398780ce68e6dd411b1b5b");
-//
-        String ACCESS_TOKEN = "";
-//
-//        String ACCESS_TOKEN = "vKX8KHEasRL_O9nhNpWj0RHKLXBJ6j75AEt4dz84KXLSokctMfB4J1a98j8zs4HuoI9mgxSZb6msu8GfoZwvJTDm0Bo7tpjSNiex_TRMFRO75QqObtUPWTnSIMulozcFXHXaAEAHRH";
+        Token token = getAccessToken("wxb6646a6c65188411", "9ff843ad69398780ce68e6dd411b1b5b");
+
+        String ACCESS_TOKEN = token.getAccess_token();
 
         System.out.println(ACCESS_TOKEN);
 
-        String user_url = USER_MESSAGE_URL.replace("{ACCESS_TOKEN}", ACCESS_TOKEN).replace("{OPENID}", "oTHSZ0Z-ZZSnd-x3uMcJFmFdVsJA");
+        String user_url = USER_MESSAGE_URL.replace("{ACCESS_TOKEN}", ACCESS_TOKEN).replace("{OPENID}", "oTHSZ0WmDfwC7ut3sCQRRtUdugl0");
 
         String resultStr = CommonUtil.httpsRequest(user_url, "GET", null);
 

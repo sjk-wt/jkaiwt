@@ -217,7 +217,7 @@ public class WeixinController {
                         UserMessageUtil.getUserMessage(fromUserName, weixinUser);
                         weixinUserService.insertSelective(weixinUser);
                         StringBuffer sb = new StringBuffer();
-                        sb.append("感谢您的关注，小石竭诚为您服务！").append("\n\n");
+                        sb.append("Miss You 感谢您的关注，小石竭诚为您服务！").append("\n\n");
                         sb.append("输入：城市+").append("\"天气\"，例如：北京天气\n");
                         sb.append("          ").append("\"天气\"+城市，例如：天气北京\n");
                         sb.append("即可查询城市天气预报\n\n");
@@ -231,7 +231,7 @@ public class WeixinController {
                         UserMessageUtil.getUserMessage(fromUserName, weixinUser);
                         weixinUserService.updateByPrimaryKeySelective(weixinUser);
                         StringBuffer sb = new StringBuffer();
-                        sb.append("感谢您的再次关注，小石竭诚为您服务！").append("\n\n");
+                        sb.append("Miss You 感谢您的再次关注，小石竭诚为您服务！").append("\n\n");
                         sb.append("输入：城市+").append("\"天气\"，例如：北京天气\n");
                         sb.append("          ").append("\"天气\"+城市，例如：天气北京\n");
                         sb.append("即可查询城市天气预报\n\n");
