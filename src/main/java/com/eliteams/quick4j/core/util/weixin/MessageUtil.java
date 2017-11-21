@@ -1,9 +1,9 @@
 package com.eliteams.quick4j.core.util.weixin;
 
-import com.eliteams.quick4j.core.util.PropertiesUtil;
 import com.eliteams.quick4j.core.weixinAes.AesException;
 import com.eliteams.quick4j.core.weixinAes.WXBizMsgCrypt;
-import com.eliteams.quick4j.web.controller.timedtasks.TimedTasks;
+import com.eliteams.quick4j.web.controller.timedtasks.CrtyWeatDateTask;
+import com.eliteams.quick4j.web.controller.timedtasks.WxAccessTokenTask;
 import com.eliteams.quick4j.web.model.weixin.message.*;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.core.util.QuickWriter;
@@ -114,7 +114,7 @@ public class MessageUtil {
     public static WXBizMsgCrypt getWXBizMsgCrypt() {
         WXBizMsgCrypt wxCrypt = null;
         try {
-            wxCrypt = new WXBizMsgCrypt(TimedTasks.WX_TOKEN, TimedTasks.WX_ENCODINGAESKEY, TimedTasks.WX_APPID);
+            wxCrypt = new WXBizMsgCrypt(WxAccessTokenTask.WX_TOKEN, WxAccessTokenTask.WX_ENCODINGAESKEY, WxAccessTokenTask.WX_APPID);
         } catch (AesException e) {
             e.printStackTrace();
         }

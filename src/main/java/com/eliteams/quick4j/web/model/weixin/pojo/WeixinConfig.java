@@ -9,6 +9,8 @@ public class WeixinConfig {
 
     private String wxAccessToken;
 
+    private String wxProjectUrl;
+
     public String getWxToken() {
         return wxToken;
     }
@@ -39,5 +41,13 @@ public class WeixinConfig {
 
     public void setWxAccessToken(String wxAccessToken) {
         this.wxAccessToken = wxAccessToken == null ? null : wxAccessToken.trim();
+    }
+
+    public String getWxProjectUrl() {
+        return wxProjectUrl;
+    }
+
+    public void setWxProjectUrl(String wxProjectUrl) {
+        this.wxProjectUrl = wxProjectUrl == null ? null : wxProjectUrl.trim();
     }
 }

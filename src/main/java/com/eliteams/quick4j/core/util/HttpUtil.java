@@ -157,7 +157,7 @@ public class HttpUtil {
         return get(PropertiesUtil.getProperty("esCallBackAddress")+id+"/?pretty", "UTF-8");
     }
 
-    public static String getOriginal(String id) throws IOException {
+    public static String getOriginal(String id){
         return get(id, "UTF-8");
     }
     /**
@@ -167,11 +167,11 @@ public class HttpUtil {
      * @return
      * @throws IOException
      */
-    public static String get(String url, String charset) throws IOException {
+    public static String get(String url, String charset){
         System.out.println("request:url:"+url);
         InputStream ins = null;
 
-        String var5;
+        String var5 = null;
         try {
             HttpURLConnection con = (HttpURLConnection)(new URL(url)).openConnection();
             con.setRequestMethod("GET");
@@ -185,13 +185,18 @@ public class HttpUtil {
             }
 
             var5 = readContent(ins, charset);
-        } finally {
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
             if(ins != null) {
-                ins.close();
+                try {
+                    ins.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
 
         }
-
         return var5;
     }
 

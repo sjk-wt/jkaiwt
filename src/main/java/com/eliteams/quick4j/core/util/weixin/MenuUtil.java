@@ -1,7 +1,5 @@
 package com.eliteams.quick4j.core.util.weixin;
 
-import com.eliteams.quick4j.core.util.PropertiesUtil;
-import com.eliteams.quick4j.web.controller.timedtasks.TimedTasks;
 import com.eliteams.quick4j.web.model.weixin.muen.*;
 import com.eliteams.quick4j.web.model.weixin.pojo.Token;
 import net.sf.json.JSONObject;
@@ -96,15 +94,28 @@ public class MenuUtil {
 
     public static void main(String[] args) {
 
-        Menu menu = formatMenu();
+        Menu menu = formatMenu("");
 
         String menuStr = JSONObject.fromObject(menu).toString();
 
-        System.out.println(createMenu(menuStr, TimedTasks.ACCESS_TOKEN));
+        String ACCESS_TOKEN = "vKX8KHEasRL_O9nhNpWj0RHKLXBJ6j75AEt4dz84KXLSokctMfB4J1a98j8zs4HuoI9mgxSZb6msu8GfoZwvJTDm0Bo7tpjSNiex_TRMFRO75QqObtUPWTnSIMulozcFXHXaAEAHRH";
+
+        System.out.println(createMenu(menuStr, ACCESS_TOKEN));
 
     }
 
-    private static Menu formatMenu() {
+    public static void createMenus(String appid, String appsectet, String projectPath) {
+
+        Menu menu = formatMenu(projectPath);
+
+        String menuStr = JSONObject.fromObject(menu).toString();
+
+        Token token = UserMessageUtil.getAccessToken(appid, appsectet);
+
+        System.out.println(createMenu(menuStr, token.getAccess_token()));
+    }
+
+    private static Menu formatMenu(String project_path) {
         ClickButton clickButton = new ClickButton();
         clickButton.setName("签到");
         clickButton.setKey("QIANDAO_KEY");
@@ -128,7 +139,7 @@ public class MenuUtil {
         ViewButton bmi = new ViewButton();
         bmi.setName("BMI计算器");
         bmi.setType("view");
-        bmi.setUrl(PropertiesUtil.getProperty("object_root_name") + "wx/html/index.html");
+        bmi.setUrl(project_path + "wx/html/index.html");
 
         ComplexButton complexButton = new ComplexButton();
         complexButton.setName("生活助手");
@@ -142,22 +153,22 @@ public class MenuUtil {
         ViewButton square = new ViewButton();
         square.setName("方块跳跃");
         square.setType("view");
-        square.setUrl(PropertiesUtil.getProperty("object_root_name") + "wx/games/Square/index.html");
+        square.setUrl(project_path + "wx/games/Square/index.html");
 
         ViewButton arixTetris = new ViewButton();
         arixTetris.setName("剁手么");
         arixTetris.setType("view");
-        arixTetris.setUrl(PropertiesUtil.getProperty("object_root_name") + "wx/games/duoshou1108/index.html");
+        arixTetris.setUrl(project_path + "wx/games/duoshou1108/index.html");
 
         ViewButton flappyFrog = new ViewButton();
         flappyFrog.setName("飞扬的青蛙");
         flappyFrog.setType("view");
-        flappyFrog.setUrl(PropertiesUtil.getProperty("object_root_name") + "wx/games/flappyFrog/index.html");
+        flappyFrog.setUrl(project_path + "wx/games/flappyFrog/index.html");
 
         ViewButton game2048 = new ViewButton();
         game2048.setName("2048游戏");
         game2048.setType("view");
-        game2048.setUrl(PropertiesUtil.getProperty("object_root_name") + "wx/games/2048Game/index.html");
+        game2048.setUrl(project_path + "wx/games/2048Game/index.html");
 
         ComplexButton complexButton1 = new ComplexButton();
         complexButton1.setName("休闲娱乐");

@@ -383,6 +383,76 @@ public class WeixinConfigExample {
             addCriterion("wx_access_token not between", value1, value2, "wxAccessToken");
             return (Criteria) this;
         }
+
+        public Criteria andWxProjectUrlIsNull() {
+            addCriterion("wx_project_url is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andWxProjectUrlIsNotNull() {
+            addCriterion("wx_project_url is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andWxProjectUrlEqualTo(String value) {
+            addCriterion("wx_project_url =", value, "wxProjectUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andWxProjectUrlNotEqualTo(String value) {
+            addCriterion("wx_project_url <>", value, "wxProjectUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andWxProjectUrlGreaterThan(String value) {
+            addCriterion("wx_project_url >", value, "wxProjectUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andWxProjectUrlGreaterThanOrEqualTo(String value) {
+            addCriterion("wx_project_url >=", value, "wxProjectUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andWxProjectUrlLessThan(String value) {
+            addCriterion("wx_project_url <", value, "wxProjectUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andWxProjectUrlLessThanOrEqualTo(String value) {
+            addCriterion("wx_project_url <=", value, "wxProjectUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andWxProjectUrlLike(String value) {
+            addCriterion("wx_project_url like", value, "wxProjectUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andWxProjectUrlNotLike(String value) {
+            addCriterion("wx_project_url not like", value, "wxProjectUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andWxProjectUrlIn(List<String> values) {
+            addCriterion("wx_project_url in", values, "wxProjectUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andWxProjectUrlNotIn(List<String> values) {
+            addCriterion("wx_project_url not in", values, "wxProjectUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andWxProjectUrlBetween(String value1, String value2) {
+            addCriterion("wx_project_url between", value1, value2, "wxProjectUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andWxProjectUrlNotBetween(String value1, String value2) {
+            addCriterion("wx_project_url not between", value1, value2, "wxProjectUrl");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

@@ -6,6 +6,7 @@
     <result column="wx_appID" property="wxAppid" jdbcType="VARCHAR" />
     <result column="wx_encodingAesKey" property="wxEncodingaeskey" jdbcType="VARCHAR" />
     <result column="wx_access_token" property="wxAccessToken" jdbcType="VARCHAR" />
+    <result column="wx_project_url" property="wxProjectUrl" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -66,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    wx_token, wx_appID, wx_encodingAesKey, wx_access_token
+    wx_token, wx_appID, wx_encodingAesKey, wx_access_token, wx_project_url
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.eliteams.quick4j.web.model.weixin.pojo.WeixinConfigExample" >
     select
@@ -100,9 +101,9 @@
   </delete>
   <insert id="insert" parameterType="com.eliteams.quick4j.web.model.weixin.pojo.WeixinConfig" >
     insert into weixin_config (wx_token, wx_appID, wx_encodingAesKey, 
-      wx_access_token)
+      wx_access_token, wx_project_url)
     values (#{wxToken,jdbcType=VARCHAR}, #{wxAppid,jdbcType=VARCHAR}, #{wxEncodingaeskey,jdbcType=VARCHAR}, 
-      #{wxAccessToken,jdbcType=VARCHAR})
+      #{wxAccessToken,jdbcType=VARCHAR}, #{wxProjectUrl,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.eliteams.quick4j.web.model.weixin.pojo.WeixinConfig" >
     insert into weixin_config
@@ -119,6 +120,9 @@
       <if test="wxAccessToken != null" >
         wx_access_token,
       </if>
+      <if test="wxProjectUrl != null" >
+        wx_project_url,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="wxToken != null" >
@@ -132,6 +136,9 @@
       </if>
       <if test="wxAccessToken != null" >
         #{wxAccessToken,jdbcType=VARCHAR},
+      </if>
+      <if test="wxProjectUrl != null" >
+        #{wxProjectUrl,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -156,6 +163,9 @@
       <if test="record.wxAccessToken != null" >
         wx_access_token = #{record.wxAccessToken,jdbcType=VARCHAR},
       </if>
+      <if test="record.wxProjectUrl != null" >
+        wx_project_url = #{record.wxProjectUrl,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -166,7 +176,8 @@
     set wx_token = #{record.wxToken,jdbcType=VARCHAR},
       wx_appID = #{record.wxAppid,jdbcType=VARCHAR},
       wx_encodingAesKey = #{record.wxEncodingaeskey,jdbcType=VARCHAR},
-      wx_access_token = #{record.wxAccessToken,jdbcType=VARCHAR}
+      wx_access_token = #{record.wxAccessToken,jdbcType=VARCHAR},
+      wx_project_url = #{record.wxProjectUrl,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -183,6 +194,9 @@
       <if test="wxAccessToken != null" >
         wx_access_token = #{wxAccessToken,jdbcType=VARCHAR},
       </if>
+      <if test="wxProjectUrl != null" >
+        wx_project_url = #{wxProjectUrl,jdbcType=VARCHAR},
+      </if>
     </set>
     where wx_token = #{wxToken,jdbcType=VARCHAR}
   </update>
@@ -190,7 +204,8 @@
     update weixin_config
     set wx_appID = #{wxAppid,jdbcType=VARCHAR},
       wx_encodingAesKey = #{wxEncodingaeskey,jdbcType=VARCHAR},
-      wx_access_token = #{wxAccessToken,jdbcType=VARCHAR}
+      wx_access_token = #{wxAccessToken,jdbcType=VARCHAR},
+      wx_project_url = #{wxProjectUrl,jdbcType=VARCHAR}
     where wx_token = #{wxToken,jdbcType=VARCHAR}
   </update>
 </mapper>

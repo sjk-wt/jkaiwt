@@ -1,6 +1,7 @@
 package com.eliteams.quick4j.core.util.weixin;
 
-import com.eliteams.quick4j.web.controller.timedtasks.TimedTasks;
+import com.eliteams.quick4j.web.controller.timedtasks.CrtyWeatDateTask;
+import com.eliteams.quick4j.web.controller.timedtasks.WxAccessTokenTask;
 import com.eliteams.quick4j.web.model.weixin.pojo.Token;
 import com.eliteams.quick4j.web.model.weixin.sgin.WeixinUser;
 import net.sf.json.JSONObject;
@@ -8,7 +9,6 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.IOException;
 import java.util.Date;
-import java.util.UUID;
 
 /**
  * Created by hccl on 2017/11/20.
@@ -21,7 +21,7 @@ public class UserMessageUtil {
 
     public static void getUserMessage(String openid, WeixinUser user) {
 
-        String user_url = USER_MESSAGE_URL.replace("{ACCESS_TOKEN}", TimedTasks.ACCESS_TOKEN).replace("{OPENID}", openid);
+        String user_url = USER_MESSAGE_URL.replace("{ACCESS_TOKEN}", WxAccessTokenTask.ACCESS_TOKEN).replace("{OPENID}", openid);
 
         String resultStr = CommonUtil.httpsRequest(user_url, "GET", null);
 

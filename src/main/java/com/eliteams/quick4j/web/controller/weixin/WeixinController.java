@@ -1,15 +1,16 @@
 package com.eliteams.quick4j.web.controller.weixin;
 
 import com.eliteams.quick4j.core.util.PropertiesUtil;
-import com.eliteams.quick4j.core.util.weixin.MessageUtil;
-import com.eliteams.quick4j.core.util.weixin.SignalUtil;
-import com.eliteams.quick4j.core.util.weixin.UserMessageUtil;
-import com.eliteams.quick4j.core.util.weixin.WeatherUtil;
+import com.eliteams.quick4j.core.util.weixin.*;
 import com.eliteams.quick4j.core.weixinAes.WXBizMsgCrypt;
+import com.eliteams.quick4j.web.controller.timedtasks.WxAccessTokenTask;
 import com.eliteams.quick4j.web.model.weixin.message.*;
+import com.eliteams.quick4j.web.model.weixin.pojo.WeixinConfig;
+import com.eliteams.quick4j.web.model.weixin.pojo.WeixinConfigExample;
 import com.eliteams.quick4j.web.model.weixin.sgin.WeixinSign;
 import com.eliteams.quick4j.web.model.weixin.sgin.WeixinUser;
 import com.eliteams.quick4j.web.model.weixin.sgin.WeixinUserExample;
+import com.eliteams.quick4j.web.service.weixin.pojo.WeixinConfigService;
 import com.eliteams.quick4j.web.service.weixin.sgin.WeixinSignService;
 import com.eliteams.quick4j.web.service.weixin.sgin.WeixinUserService;
 import com.eliteams.quick4j.web.service.weixin.weather.WxCrtyService;
@@ -43,6 +44,9 @@ public class WeixinController {
     @Resource
     private WxCrtyService wxCrtyService;
 
+    @Resource
+    private WeixinConfigService weixinConfigService;
+
     @RequestMapping(value = "/weixin", method = RequestMethod.GET)
     public void doGetMessage(HttpServletRequest request, HttpServletResponse response) throws IOException {
         logger.info("【微信认证GET请求方法】");
@@ -51,16 +55,34 @@ public class WeixinController {
         String nonce = request.getParameter("nonce");
         String echostr = request.getParameter("echostr");
 
+        WeixinConfigExample example = new WeixinConfigExample();
+        example.createCriteria().andWxTokenIsNotNull();
+        WeixinConfig wxConfig = weixinConfigService.selectByExample(example).get(0);
+
+        WxAccessTokenTask.WX_TOKEN = wxConfig.getWxToken();
+
         PrintWriter out =  response.getWriter();
         if (SignalUtil.checkSignature(timestamp, nonce, signature)) {
             out.write(echostr);
         }
         out.close();
+
+        //加载菜单
+        MenuUtil.createMenus(wxConfig.getWxAppid(), wxConfig.getWxEncodingaeskey(), wxConfig.getWxProjectUrl());
     }
 
     @RequestMapping(value = "/weixin", method = RequestMethod.POST)
     public void doPostMessage(HttpServletRequest request, HttpServletResponse response) throws IOException {
         logger.info("【POST请求】");
+        if (WxAccessTokenTask.ACCESS_TOKEN == null) {
+            WeixinConfigExample example = new WeixinConfigExample();
+            example.createCriteria().andWxTokenIsNotNull();
+            WeixinConfig wxConfig = weixinConfigService.selectByExample(example).get(0);
+            WxAccessTokenTask.ACCESS_TOKEN = UserMessageUtil.getAccessToken(wxConfig.getWxAppid(), wxConfig.getWxEncodingaeskey()).getAccess_token();
+            WxAccessTokenTask.WX_APPID = wxConfig.getWxAppid();
+            WxAccessTokenTask.WX_TOKEN = wxConfig.getWxToken();
+            WxAccessTokenTask.WX_ENCODINGAESKEY = wxConfig.getWxEncodingaeskey();
+        }
         String timestamp = request.getParameter("timestamp");
         String signature = request.getParameter("signature");
         String nonce = request.getParameter("nonce");
@@ -142,7 +164,7 @@ public class WeixinController {
                         newsMessage.setArticles(articles);
                         respXML = MessageUtil.messageToXML(newsMessage);
                     } else {
-                        textMessage.setContent("请输入中国的城市！");
+                        textMessage.setContent("天气预报获取失败！");
                         respXML = MessageUtil.messageToXML(textMessage);
                     }
                 } else {
@@ -244,6 +266,7 @@ public class WeixinController {
                     else if ("WEATHER_KEY".equals(eventKey)) {
                         WeixinUser user = getUserByOpendId(fromUserName);
                         String crty = user.getCity();
+                        System.out.println(crty);
                         List<Article> articles = WeatherUtil.BaiDuWeather(crty, wxCrtyService);
                         if (articles.size() > 0) {
                             NewsMessage newsMessage = new NewsMessage();
@@ -255,7 +278,7 @@ public class WeixinController {
                             newsMessage.setArticles(articles);
                             respXML = MessageUtil.messageToXML(newsMessage);
                         } else {
-                            textMessage.setContent("请输入中国的城市！");
+                            textMessage.setContent("天气预报获取失败！");
                             respXML = MessageUtil.messageToXML(textMessage);
                         }
                     } else {
